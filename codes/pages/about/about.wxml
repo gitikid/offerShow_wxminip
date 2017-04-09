@@ -1,0 +1,31 @@
+<!--pages/about/about.wxml-->
+<view class="maintop maintop-style">
+版权和声明
+</view>
+<view class="avatar" >
+<image animation="{{anim}}" mode="aspectFill" src="../../static/about.jpg"></image>
+</view>
+<view class="text">
+该小程序基于MIT License开发，在原版offershow的api基础上封装而成，仅用于练习。
+</view>
+<view class="text">
+在此感谢原版offershow 校招薪水及作者大佬。
+</view>
+<view class="text">
+<text>
+原版主页：www.ioffershow.com
+</text>
+</view>
+<view class="text">
+<text>
+我的github账号：https://github.com/wanghsinche 
+</text>
+</view>
+<view class="text">
+<text>
+我的邮箱：wanghsinche@hotmail.com 
+</text>
+</view>
+<button bindtap="tapBack" class="btn good">知道了！</button>
+
+

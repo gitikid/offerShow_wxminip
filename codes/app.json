@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/main/main",
+    "pages/corp/corp",
+    "pages/detail/detail",
+    "pages/post/post",
+    "pages/about/about"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "offerShow·简约版",
+    "navigationBarTextStyle":"black"
+  }
+}

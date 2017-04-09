@@ -1,0 +1,17 @@
+/* pages/about/about.wxss */
+
+.text{
+    margin: 8rpx 16rpx;
+}
+.avatar{
+    margin: 32rpx auto;
+    width: 300rpx;
+}
+.avatar image{
+    opacity: 0;
+    display: inline-block;
+    width: 280rpx;
+    height: 280rpx;
+    border-radius: 50%;
+    border: 1px gray solid;
+}

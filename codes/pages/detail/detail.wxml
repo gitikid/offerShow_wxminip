@@ -1,0 +1,44 @@
+<!--pages/detail/detail.wxml-->
+<view class="maintop maintop-style">offer详情</view>
+<view class="outline">
+    <view class="row">
+        <view class="title">行业：</view>
+        <view class="value">{{detail.hangye}}</view>
+    </view>
+    <view class="row">
+        <view class="title">公司：</view>
+        <view class="value">{{detail.company}}</view>
+    </view>
+    <view class="row">
+        <view class="title">职位：</view>
+        <view class="value">{{detail.position}}</view>
+    </view>
+    <view class="row">
+        <view class="title">地点：</view>
+        <view class="value">{{detail.city}}</view>
+    </view>
+    <view class="row">
+        <view class="title">学历：</view>
+        <view class="value">{{detail.xueli}}</view>
+    </view>    
+    <view class="row">
+        <view class="title">工资：</view>
+        <view class="value">{{detail.salary}}</view>
+    </view>
+    <view class="row">
+        <view class="title">可信度：</view>
+        <view class="value">{{detail.score}}</view>
+    </view>
+    <view class="row">
+        <view class="title">热度：</view>
+        <view class="value">{{detail.number}}</view>
+    </view>    
+    <time>{{detail.time}}</time>
+</view>
+<view class="h2">备注：</view>
+<view class="desc">{{detail.remark}}</view>
+
+<view class="bottom">
+    <view bindtap="tapRank" class="btn bad" data-rank="jobdislike">不真实</view>
+    <view bindtap="tapRank" class="btn good" data-rank="joblike">可信</view>
+</view>
