@@ -1,4 +1,5 @@
 //app.js
+var token = require('/utils/token.js');
 App({
   onLaunch: function() {
     //调用API从本地缓存中获取数据
@@ -90,7 +91,7 @@ App({
     });
   },
   globalData: {
-    token: 'pbkdf2_sha256$15000$fZ4RfyLklXxd$EDFU4AuDSsppwkve3e8WFcQkoT3GI98LHitpyohJaRg=',
+    token: token.token,
     domain: 'https://www.ioffershow.com',
     userInfo: null
   }
