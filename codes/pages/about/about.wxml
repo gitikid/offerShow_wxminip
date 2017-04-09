@@ -1,6 +1,7 @@
 <!--pages/about/about.wxml-->
 <view class="maintop maintop-style">
-版权和声明
+<view class="topbtn" bindtap="tapBack">Back</view>
+<view class="toptext" >版权和声明</view>
 </view>
 <view class="avatar" >
 <image animation="{{anim}}" mode="aspectFill" src="../../static/about.jpg"></image>
@@ -11,21 +12,20 @@
 <view class="text">
 在此感谢原版offershow 校招薪水及作者大佬。
 </view>
-<view class="text">
+<view class="text center">
 <text>
 原版主页：www.ioffershow.com
 </text>
 </view>
-<view class="text">
+<view class="text center">
 <text>
-我的github账号：https://github.com/wanghsinche 
+源码github地址：https://github.com/wanghsinche/offerShow_wxminip
 </text>
 </view>
-<view class="text">
+<view class="text center">
 <text>
 我的邮箱：wanghsinche@hotmail.com 
 </text>
 </view>
-<button bindtap="tapBack" class="btn good">知道了！</button>
 
 

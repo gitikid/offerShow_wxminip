@@ -1,7 +1,7 @@
 /**app.wxss**/
 page{
   position: relative;
-  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;  
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;   overflow-y: scroll;
 }
 
 .container {
@@ -28,13 +28,27 @@ time{
   text-align: center;
   line-height: 80rpx;
   margin-bottom: 16rpx;
+  display: -webkit-flex;
+}
+
+.maintop .topbtn{
+  flex: 1 1 0;
+  border-right: 1rpx white solid;
+}
+.maintop .toptext{
+  flex: 5 0 0;
 }
 .maintop-style{
-    background: -webkit-gradient(linear,0% 0%, 0% 100%, from(#1E90FF), to(#1B82E3), color-stop(0.5,#1E90FF))
-;
+  background: dodgerblue;
+  color: white;
+}
+
+.maintop-style-3d{
+  background: -webkit-gradient(linear,0% 0%, 0% 100%, from(#1E90FF), to(#1B82E3), color-stop(0.5,#1E90FF));
   box-shadow: 0px 2px 2px gray;
   color: white;
 }
+
 
 .card{
     margin: 20rpx 16rpx;
@@ -123,7 +137,7 @@ time{
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 90rpx;
+  height: 120rpx;
 }
 .bottom .btn{
     flex: 1 0 0;

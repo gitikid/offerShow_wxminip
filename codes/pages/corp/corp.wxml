@@ -1,5 +1,8 @@
 <!--pages/corp/corp.wxml-->
-<view class="maintop maintop-style">{{corp}}</view>
+<view class="maintop maintop-style">
+<view class="topbtn" bindtap="tapBack">Back</view>
+<view class="toptext" >{{corp}}</view>
+</view>
 <view class="detail">
     <view class="h2">热门职位：</view>
     <view class="tagls" >

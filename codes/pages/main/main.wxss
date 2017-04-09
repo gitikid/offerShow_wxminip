@@ -43,28 +43,27 @@
 }
 
 .foot{
-    height: 120rpx;
+    height: 130rpx;
 }
 .bottom{
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 90rpx;
+  height: 120rpx;
   display: -webkit-flex;
   background: white;
-  line-height: 90rpx;
+  line-height: 120rpx;
 }
 
 .bottom .btn{
     flex: 1 0 0;
     text-align: center;
     color: gray;
-    border-top: 3rpx gray solid;  
+    border-top: 8rpx gray solid;  
 }
 .btn.curr{
-    border-top: 3rpx dodgerblue solid;  
+    border-top: 8rpx dodgerblue solid;  
     color: dodgerblue;
-    /*background: #e7fff7;*/
 }
 

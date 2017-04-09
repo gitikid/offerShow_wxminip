@@ -1,4 +1,4 @@
-<view class="top maintop-style">
+<view class="top maintop-style-3d">
 <input id="searchbox" bindinput="changeInput" placeholder="offer搜索"/>
 <view bindtap="tapSearch" class="btn searchbtn">search</view>
 <view bindtap="tapAbout" class="btn about" >cc</view>

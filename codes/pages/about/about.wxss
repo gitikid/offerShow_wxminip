@@ -3,6 +3,9 @@
 .text{
     margin: 8rpx 16rpx;
 }
+.center{
+	text-align: center;
+}
 .avatar{
     margin: 32rpx auto;
     width: 300rpx;

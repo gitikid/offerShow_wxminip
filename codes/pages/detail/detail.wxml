@@ -1,5 +1,8 @@
 <!--pages/detail/detail.wxml-->
-<view class="maintop maintop-style">offer详情</view>
+<view class="maintop maintop-style">
+<view class="topbtn" bindtap="tapBack">Back</view>
+<view class="toptext" >offer详情</view>
+</view>
 <view class="outline">
     <view class="row">
         <view class="title">行业：</view>

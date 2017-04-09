@@ -1,39 +1,39 @@
 // pages/about/about.js
 var app = getApp();
 Page({
-  data:{
-    anim:{}
+  data: {
+    anim: {}
   },
-  onLoad:function(options){
+  onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
     var animation = wx.createAnimation({
       duration: 1500,
       timingFunction: "ease",
       delay: 0
-    });    
+    });
     animation.opacity(1).step();
     this.setData({
-      anim:animation.export()
-    });  
-    
+      anim: animation.export()
+    });
+
   },
-  onReady:function(){
+  onReady: function() {
     // 页面渲染完成
 
   },
-  onShow:function(){
+  onShow: function() {
     // 页面显示
   },
-  onHide:function(){
+  onHide: function() {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function() {
     // 页面关闭
   },
-  tapBack:function(){
+  tapBack: function() {
     wx.navigateBack({
       delta: 1, // 回退前 delta(默认为1) 页面
-      success: function(res){
+      success: function(res) {
         // success
       },
       fail: function(res) {

@@ -37,7 +37,8 @@ Page({
     position:'',
     city:'',
     salary:'',
-    remark:''
+    remark:'',
+    isInput:false
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -53,6 +54,16 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  onFocus:function(){
+    this.setData({
+      isInput:true
+    });
+  },
+  onBlur:function(){
+    this.setData({
+      isInput:false
+    });    
   },
   changeCate:function(e){
     this.setData({
