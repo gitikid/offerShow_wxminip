@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/test/test",
     "pages/main/main",
     "pages/corp/corp",
     "pages/detail/detail",
@@ -8,8 +9,8 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#1e90ff",
     "navigationBarTitleText": "offerShow·简约版",
-    "navigationBarTextStyle":"black"
-  }
+    "navigationBarTextStyle":"white"
+    }
 }
