@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/offer/offer",
     "pages/test/test",
     "pages/main/main",
     "pages/corp/corp",
@@ -12,5 +13,18 @@
     "navigationBarBackgroundColor": "#1e90ff",
     "navigationBarTitleText": "offerShow·简约版",
     "navigationBarTextStyle":"white"
-    }
+    },
+  "tabBar": {
+    "selectedColor": "#1e90ff",
+    "list": [{
+      "pagePath": "pages/main/main",
+      "text": "mine"
+    }, {
+      "pagePath": "pages/offer/offer",
+      "text": "offer"
+    }, {
+      "pagePath": "pages/test/test",
+      "text": "corp"
+    }]
+  }
 }

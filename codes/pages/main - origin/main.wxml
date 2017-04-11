@@ -1,0 +1,45 @@
+<view class="top maintop-style-3d">
+<input id="searchbox" bindinput="changeInput" placeholder="offer搜索"/>
+<view bindtap="tapSearch" class="btn searchbtn">search</view>
+<view bindtap="tapAbout" class="btn about" >cc</view>
+</view>
+<view wx:if="{{!corpMode}}" class="listcontain">
+    <navigator wx:for="{{list}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}">
+    <view class="card">
+        <view class="card-r1">
+            <view class="card-c-left">{{item.city}}</view>
+            <view class="card-c-right">可信度：{{item.score}}</view>
+        </view>
+        <view class="card-r2">
+            {{item.company}}--{{item.position}}
+        </view>
+        <view class="card-r3">
+            <view class="card-c-left">热度：{{item.number}}</view>
+            <view class="card-c-right">{{item.time}}</view>    
+        </view>
+    </view>
+    </navigator>
+</view>
+<view wx:if="{{corpMode}}" class="listcontain">
+
+    <navigator wx:for="{{list}}" wx:key="{{*this}}" url="../corp/corp?name={{item.company}}">
+        <view class="card">
+            <view class="card-r2">
+                {{item.company}}
+            </view>
+            <view class="card-r3">
+                <view class="card-c-left">热度：{{item.number}}</view>
+                            <view class="card-c-right">{{item.time}}</view>        
+            </view>
+        </view>    
+    </navigator>
+</view>
+
+<view class="foot" ></view>
+<view class="bottom">
+    <view bindtap="tapKind" class="btn {{kind==='jobtotal'?'curr':''}}" data-kind="jobtotal">最新</view>
+    <view bindtap="tapKind" class="btn {{kind==='jobhot'?'curr':''}}" data-kind="jobhot">热门</view>
+    <view bindtap="tapPost" class="btn">
+    发布
+    </view>    
+</view>

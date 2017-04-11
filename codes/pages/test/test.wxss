@@ -1,24 +1,12 @@
 /* pages/test/test.wxss */
-.weui-search-bar__cancel-btn, .weui-cell__bd{
-	color: dodgerblue;
-}
-.my-btn-more{
-	margin-right:10px;
-	line-height: 28px;
-}
-.my-btn-more image{
-	display: inline-block;
-	height: 28px;
-	width: 28px;
-	vertical-align: middle;
+page{
+	height: 100%;
 }
 .my-scroll{
 	position: absolute;
-	top: 48px;
+	top: 50px;
 	left: 0;
-	bottom: 50px;
-	right: 0;
-	background: #EFEFF4;
+	bottom: 0;
 }
 .my-text-left{
 	text-align: left;
@@ -32,5 +20,5 @@
 	left: 0;
 	right: 0;
 	top: auto;
-	height: 50px;
+	height: 48px;
 }

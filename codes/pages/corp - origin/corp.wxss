@@ -1,0 +1,34 @@
+/* pages/corp/corp.wxss */
+.top{
+  background: dodgerblue;
+  /*border-bottom: 2rpx limegreen solid;     */
+  color: white;
+  height: 80rpx;
+  font-size: 40rpx;
+  padding: 16rpx 8rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.detail{
+    margin: 16rpx 0 32rpx 0;
+}
+.h2{
+    margin: 16rpx;
+}
+.tagls{
+    padding: 8rpx 16rpx;
+}
+.tag{
+    display: inline-block;
+    border: 1rpx dodgerblue solid;
+    border-radius: 8rpx;
+    margin: 8rpx;
+    padding: 8rpx;
+}
+.detaills{
+    border-top:2rpx dodgerblue solid;
+}
+
+.simplels{
+    margin-bottom: 100rpx;
+}
