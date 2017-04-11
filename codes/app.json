@@ -1,7 +1,7 @@
 {
   "pages":[
     "pages/offer/offer",
-    "pages/test/test",
+    "pages/hot/hot",
     "pages/main/main",
     "pages/corp/corp",
     "pages/detail/detail",
@@ -17,14 +17,14 @@
   "tabBar": {
     "selectedColor": "#1e90ff",
     "list": [{
-      "pagePath": "pages/main/main",
-      "text": "mine"
-    }, {
       "pagePath": "pages/offer/offer",
       "text": "offer"
     }, {
-      "pagePath": "pages/test/test",
+      "pagePath": "pages/hot/hot",
       "text": "corp"
+    },{
+      "pagePath": "pages/main/main",
+      "text": "mine"
     }]
   }
 }

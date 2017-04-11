@@ -1,0 +1,33 @@
+<view class="weui-flex my-top my-top-style">
+    <view class="weui-flex__item"><view class="">公司热度排行</view></view>
+</view>
+<scroll-view class="my-scroll" scroll-y="true">
+
+        <navigator class="weui-panel weui-panel_access"wx:for="{{list}}" wx:key="{{*this}}" url="../corp/corp?name={{item.company}}">
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="my-panel-left">
+                        <view class="weui-media-box__title weui-media-box__title_in-text">{{item.company}}</view>
+                        <view class="weui-media-box__desc">
+                            热门职位：<span class="tag">xx</span><span class="tag">xx</span>          
+                        </view>                        
+                    </view>
+                    <view class="my-panel-right">
+                        热度：{{item.number}}
+                    </view>
+                </view>
+            </view>
+            <view class="weui-panel__ft">
+                <view class="weui-cell weui-cell_access weui-cell_link">
+                    <view class="weui-cell__bd">查看详情</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </view>
+            </view>
+        </navigator>  
+                                    
+</scroll-view>
+
+
+
+
+        

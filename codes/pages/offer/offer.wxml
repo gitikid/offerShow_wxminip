@@ -1,4 +1,4 @@
-<view class="weui-flex my-top">
+<view class="weui-flex">
     <view class="weui-flex__item">
         <view class="weui-search-bar">
             <view class="weui-btn weui-btn_plain-default my-btn-more">
@@ -21,87 +21,24 @@
         </view>        
     </view>
 </view>
-<scroll-view>
-        <navigator class="weui-panel weui-panel_access">
+<scroll-view class="my-scroll" scroll-y="true">
+        <navigator class="weui-panel weui-panel_access" wx:for="{{list}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}">
             <view class="weui-panel__hd">
-                <span class="my-text-left">华为</span>
-                <span class="my-text-right">杭州</span>
+                <span class="my-text-left">{{item.company}}</span>
+                <span class="my-text-right">{{item.city}}</span>
             </view>
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_text">
-                    <view class="weui-media-box__title weui-media-box__title_in-text">it应用工程师</view>
+                    <view class="weui-media-box__title weui-media-box__title_in-text">{{item.position}}</view>
                     <view class="weui-media-box__desc">
-                        <span class="my-text-left">热度：3300</span>
-                        <span class="my-text-right">可信度：400</span>                        
+                        <span class="my-text-left">热度：{{item.number}}</span>
+                        <span class="my-text-right">可信度：{{item.score}}</span>                        
                     </view>
                 </view>
             </view>
             <view class="weui-panel__ft">
                 <view class="weui-cell weui-cell_access weui-cell_link">
-                    <view class="weui-cell__bd">查看offer详情</view>
-                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                </view>
-            </view>
-        </navigator> 
-        <navigator class="weui-panel weui-panel_access">
-            <view class="weui-panel__hd">
-                <span class="my-text-left">华为</span>
-                <span class="my-text-right">杭州</span>
-            </view>
-            <view class="weui-panel__bd">
-                <view class="weui-media-box weui-media-box_text">
-                    <view class="weui-media-box__title weui-media-box__title_in-text">it应用工程师</view>
-                    <view class="weui-media-box__desc">
-                        <span class="my-text-left">热度：3300</span>
-                        <span class="my-text-right">可信度：400</span>                        
-                    </view>
-                </view>
-            </view>
-            <view class="weui-panel__ft">
-                <view class="weui-cell weui-cell_access weui-cell_link">
-                    <view class="weui-cell__bd">查看offer详情</view>
-                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                </view>
-            </view>
-        </navigator> 
-        <navigator class="weui-panel weui-panel_access">
-            <view class="weui-panel__hd">
-                <span class="my-text-left">华为</span>
-                <span class="my-text-right">杭州</span>
-            </view>
-            <view class="weui-panel__bd">
-                <view class="weui-media-box weui-media-box_text">
-                    <view class="weui-media-box__title weui-media-box__title_in-text">it应用工程师</view>
-                    <view class="weui-media-box__desc">
-                        <span class="my-text-left">热度：3300</span>
-                        <span class="my-text-right">可信度：400</span>                        
-                    </view>
-                </view>
-            </view>
-            <view class="weui-panel__ft">
-                <view class="weui-cell weui-cell_access weui-cell_link">
-                    <view class="weui-cell__bd">查看offer详情</view>
-                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                </view>
-            </view>
-        </navigator> 
-        <navigator class="weui-panel weui-panel_access">
-            <view class="weui-panel__hd">
-                <span class="my-text-left">华为</span>
-                <span class="my-text-right">杭州</span>
-            </view>
-            <view class="weui-panel__bd">
-                <view class="weui-media-box weui-media-box_text">
-                    <view class="weui-media-box__title weui-media-box__title_in-text">it应用工程师</view>
-                    <view class="weui-media-box__desc">
-                        <span class="my-text-left">热度：3300</span>
-                        <span class="my-text-right">可信度：400</span>                        
-                    </view>
-                </view>
-            </view>
-            <view class="weui-panel__ft">
-                <view class="weui-cell weui-cell_access weui-cell_link">
-                    <view class="weui-cell__bd">查看offer详情</view>
+                    <view class="weui-cell__bd">{{item.time}}</view>
                     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                 </view>
             </view>
