@@ -24,13 +24,52 @@ Page({
         if (corpMode) {
           // select unique corperation
           var hash = {};
-          var filted = list.filter((v, i) => {
+          var filted = [];
+          var temp = {
+            'company': '',
+            'number': 0,
+            'positions': []
+          };
+          var ii = 0;
+          list.forEach((v, i) => {
             if (hash.hasOwnProperty(v.company)) {
-              return false;
+              hash[v.company].number += v.number;
+              hash[v.company].positions.push(v.position.slice(0,5));
+
             } else {
-              hash[v.company] = 1;
-              return true;
+              hash[v.company] = {
+                'company': v.company,
+                'number': v.number,
+                'positions': [v.position.slice(0,5)]
+              }
             }
+          });
+          filted = Object.keys(hash).map(key => hash[key]);
+          // for (var corp in hash) {
+          //   if (hash.hasOwnProperty(corp)) {
+          //       temp = hash[corp];
+          //       filted.push(temp);
+          //   }
+          // }
+          // list.forEach((v, i) => {
+          //   if (hash.hasOwnProperty(v.company)) {
+          //     temp = filted[hash[v.company]];
+          //     temp.number += v.number;
+          //     temp.positions.push(v.position.slice(0,5));
+          //     filted[hash[v.company]] = temp;
+          //   } else {
+          //     temp = {
+          //       'company': v.company,
+          //       'number': parseInt(v.number, 10),
+          //       'positions': [v.position.slice(0,5)]
+          //     };
+          //     hash[v.company] = ii;
+          //     ++ii;
+          //     filted.push(temp);
+          //   }
+          // });
+          filted.sort((a, b)=>{
+            return b.number - a.number;
           });
           _this.setData({
             list: filted,

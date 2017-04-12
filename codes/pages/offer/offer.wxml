@@ -1,9 +1,9 @@
-<view class="weui-flex">
+<view class="weui-flex my-top my-top-fixed">
     <view class="weui-flex__item">
         <view class="weui-search-bar">
             <view class="weui-btn weui-btn_plain-default my-btn-more">
                 <image src="../../static/icon_nav_form.png"></image>
-            </view> 
+            </view>
             <view class="weui-search-bar__form">
                 <view class="weui-search-bar__box">
                     <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
@@ -16,12 +16,12 @@
                     <icon class="weui-icon-search" type="search" size="14"></icon>
                     <view class="weui-search-bar__text">搜索</view>
                 </label>
-            </view>           
+            </view>
             <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
-        </view>        
+        </view>
     </view>
 </view>
-<scroll-view class="my-scroll" scroll-y="true">
+<view class="my-noscroll">
         <navigator class="weui-panel weui-panel_access" wx:for="{{list}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}">
             <view class="weui-panel__hd">
                 <span class="my-text-left">{{item.company}}</span>
@@ -32,7 +32,7 @@
                     <view class="weui-media-box__title weui-media-box__title_in-text">{{item.position}}</view>
                     <view class="weui-media-box__desc">
                         <span class="my-text-left">热度：{{item.number}}</span>
-                        <span class="my-text-right">可信度：{{item.score}}</span>                        
+                        <span class="my-text-right">可信度：{{item.score}}</span>
                     </view>
                 </view>
             </view>
@@ -42,5 +42,5 @@
                     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                 </view>
             </view>
-        </navigator>                         
-</scroll-view>
+        </navigator>
+</view>
