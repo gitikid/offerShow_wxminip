@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/offer/offer",
     "pages/hot/hot",
+    "pages/offer/offer",
     "pages/main/main",
     "pages/corp/corp",
     "pages/detail/detail",

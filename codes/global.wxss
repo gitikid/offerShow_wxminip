@@ -22,6 +22,7 @@ page{
 	background: dodgerblue;
 	border: none;
 	box-shadow: 0 2px 2px gray;
+	padding: 0 10px 0 10px;
 }
 
 .weui-search-bar__cancel-btn, .weui-cell__bd{
@@ -31,7 +32,7 @@ page{
 	margin-right:10px;
 	line-height: 28px;
 }
-.my-btn-more image{
+.my-btn-icon image{
 	display: inline-block;
 	height: 28px;
 	width: 28px;
@@ -82,6 +83,9 @@ page{
 .my-text-right{
 	float: right;
 	display: inline-block;
+}
+.my-text-alignright{
+	text-align: right;
 }
 .my-bottom{
 	position: absolute;
