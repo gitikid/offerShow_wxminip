@@ -25,7 +25,32 @@ App({
       })
     }
   },
-  cache: {},
+  setFav: function(key, value){
+    var obj = wx.getStorageSync('fav') || {};
+    obj[key] = value;
+    wx.setStorageSync('fav', obj);
+  },
+  getFav: function(key){
+    if (typeof key === 'undefined') {
+      return wx.getStorageSync('fav');
+    }
+    else{
+      if (typeof key === 'string') {
+        return wx.getStorageSync('fav')[key];
+      }
+      else{
+        return null;
+      }
+    }
+    
+  },
+  delFav: function(key){
+    var obj = wx.getStorageSync('fav') || {};
+    if (key in obj) {
+      delete obj[key];
+    }
+    wx.setStorageSync('fav', obj);    
+  },
   getCache: function(id) {
     return this.cache[id];
   },
@@ -90,7 +115,9 @@ App({
       }
     });
   },
+  cache: {},
   globalData: {
+    isiOS: wx.getSystemInfoSync().system.indexOf('iOS') === -1?false:true,
     token: token.token,
     domain: 'https://www.ioffershow.com',
     userInfo: null

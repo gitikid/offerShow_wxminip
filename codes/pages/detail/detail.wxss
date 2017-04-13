@@ -1,21 +1,8 @@
 /* pages/detail/detail.wxss */
-.top{
-  background: dodgerblue;
-  /*border-bottom: 2rpx limegreen solid;     */
-  color: white;
-  height: 80rpx;
-  font-size: 40rpx;
-  padding: 16rpx 8rpx;
-  text-align: center;
-  line-height: 80rpx;
+.weui-form-preview__hd, .weui-form-preview__bd{
+	text-align: initial;
 }
 
-.h2{
-    font-size: 40rpx;
-    margin: 32rpx 0 16rpx 0;
-    padding-top: 16rpx;
-    padding-left: 16rpx; 
-    padding-bottom: 16rpx;  
-    border-top: 2rpx dodgerblue solid;   
+.weui-form-preview__btn.weui-form-preview__btn_primary{
+	color: dodgerblue;
 }
-

@@ -1,6 +1,6 @@
 <!--pages/about/about.wxml-->
 <view class="weui-flex my-top my-top-style">
-  <view class="my-btn-icon" bindtap="tapBack">
+  <view class="my-btn-icon" bindtap="tapBack" >
     <image src="../../static/icon_nav_back.png"></image>
   </view>
   <view class="weui-flex__item">
@@ -28,5 +28,8 @@
                 我的邮箱：wanghsinche@hotmail.com
             </view>
         </view>
+    </view>
+    <view class="weui-article__section">
+        <button class="weui-btn" type="default" plain="true" bindtap="tapBack">团长最高！</button> 
     </view>
 </view>

@@ -61,6 +61,14 @@ Page({
       }
     })
   },
+  saveToFav: function(){
+    app.setFav(this.data.id.toString(), this.data.detail);
+    wx.showToast({
+      "title":"success",
+      "icon":"success",
+      "duration":1500
+    });
+  },
   tapRank: function(e) {
     var that = this;
     wx.showModal({

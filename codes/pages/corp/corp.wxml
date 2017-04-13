@@ -1,7 +1,7 @@
 
 <!--pages/corp/corp.wxml-->
 <view class="weui-flex my-top my-top-fixed my-top-style">
-  <view class="my-btn-icon" bindtap="tapBack">
+  <view class="my-btn-icon" bindtap="tapBack" >
     <image src="../../static/icon_nav_back.png"></image>
   </view>
   <view class="weui-flex__item">
@@ -36,7 +36,7 @@
       <view class="weui-media-box__desc weui-media-box__title_in-text my-panel-title">详细评价(点击查看详情)：</view>
     </view>
     <view class="weui-panel__bd">
-      <navigator class="weui-media-box weui-media-box_text" wx:for="{{detaills}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}">
+<!--       <navigator class="weui-media-box weui-media-box_text" wx:for="{{detaills}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}">
         <view class="weui-media-box__desc">
             <view class="my-panel-cell my-text-left">{{item.city}}</view>
             <view class="my-panel-cell my-text-right">热度：{{item.number}}</view>
@@ -50,15 +50,18 @@
         <view class="weui-media-box__desc">
           <view class="my-panel-cell my-text-alignright">工资：{{item.salary}}</view>
         </view>
-      </navigator>
+      </navigator> -->
       <navigator class="weui-media-box weui-media-box_text" wx:for="{{offerls}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}">
-        <view class="weui-media-box__desc">
-            <view class="my-panel-cell my-text-left">{{item.city}}</view>
-            <view class="my-panel-cell my-text-right">热度：{{item.number}}</view>
-        </view>
         <view class="weui-media-box__title">
           {{item.position}}
         </view>
+        <view class="weui-media-box__desc">
+          {{item.remark}}
+        </view>         
+        <view class="weui-media-box__desc">
+            <view class="my-panel-cell my-text-alignright">热度：{{item.number}}</view>
+        </view>
+
       </navigator>
     </view>
   </view>

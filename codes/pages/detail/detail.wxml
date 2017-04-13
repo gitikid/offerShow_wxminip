@@ -1,45 +1,60 @@
 <!--pages/detail/detail.wxml-->
-<view class="maintop maintop-style">
-<view class="topbtn" bindtap="tapBack">Back</view>
-<view class="toptext" >offer详情</view>
+<view class="weui-flex my-top  my-top-style">
+  <view class="my-btn-icon" bindtap="tapBack" >
+    <image src="../../static/icon_nav_back.png"></image>
+  </view>
+  <view class="weui-flex__item">
+    <view class="placeholder">offer详情</view>
+  </view>
 </view>
-<view class="outline">
-    <view class="row">
-        <view class="title">行业：</view>
-        <view class="value">{{detail.hangye}}</view>
+<scroll-view scroll-y="true" class="my-scroll">
+    <view class="weui-form-preview">
+        <view class="weui-form-preview__hd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">职位：</view>
+                <view class="weui-form-preview__value_in-hd">{{detail.position}}</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">行业：</view>
+                <view class="weui-form-preview__value">{{detail.hangye}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">公司：</view>
+                <view class="weui-form-preview__value">{{detail.company}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">地点：</view>
+                <view class="weui-form-preview__value">{{detail.city}}</view>
+            </view> 
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">学历：</view>
+                <view class="weui-form-preview__value">{{detail.xueli}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">工资：</view>
+                <view class="weui-form-preview__value">{{detail.salary}}</view>
+            </view>
+            <view class="weui-form-preview__item ">
+                <view class="weui-form-preview__label">热度：</view>
+                <view class="weui-form-preview__value my-panel-cell">{{detail.number}}</view>
+            </view>            
+            <view class="weui-form-preview__item ">
+                <view class="weui-form-preview__label">可信度：</view>
+                <view class="weui-form-preview__value my-panel-cell">{{detail.score}}</view>
+            </view>   
+            <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">备注：</view>
+                    <view class="weui-form-preview__value">{{detail.remark}}</view>
+            </view>                                 
+        </view>     
+
+        <view class="weui-form-preview__ft">
+            <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="saveToFav">收藏</view>
+        </view>
     </view>
-    <view class="row">
-        <view class="title">公司：</view>
-        <view class="value">{{detail.company}}</view>
-    </view>
-    <view class="row">
-        <view class="title">职位：</view>
-        <view class="value">{{detail.position}}</view>
-    </view>
-    <view class="row">
-        <view class="title">地点：</view>
-        <view class="value">{{detail.city}}</view>
-    </view>
-    <view class="row">
-        <view class="title">学历：</view>
-        <view class="value">{{detail.xueli}}</view>
-    </view>    
-    <view class="row">
-        <view class="title">工资：</view>
-        <view class="value">{{detail.salary}}</view>
-    </view>
-    <view class="row">
-        <view class="title">可信度：</view>
-        <view class="value">{{detail.score}}</view>
-    </view>
-    <view class="row">
-        <view class="title">热度：</view>
-        <view class="value">{{detail.number}}</view>
-    </view>    
-    <time>{{detail.time}}</time>
-</view>
-<view class="h2">备注：</view>
-<view class="desc">{{detail.remark}}</view>
+</scroll-view>
 
 <view class="bottom">
     <view bindtap="tapRank" class="btn bad" data-rank="jobdislike">不真实</view>

@@ -5,10 +5,8 @@ Page({
     list: [],
     kind: 'jobhot',
     keyword: '',
-    msg: '',
-    corpMode: true
   },
-  getInfo: function(urltext, corpMode = true, pastData = {}) {
+  getInfo: function(urltext, pastData = {}) {
     var _this = this;
     wx.showToast({
       title: 'loading',
@@ -21,7 +19,6 @@ Page({
       success: function(res) {
         // success
         var list = res.data.info;
-        if (corpMode) {
           // select unique corperation
           var hash = {};
           var filted = [];
@@ -45,29 +42,7 @@ Page({
             }
           });
           filted = Object.keys(hash).map(key => hash[key]);
-          // for (var corp in hash) {
-          //   if (hash.hasOwnProperty(corp)) {
-          //       temp = hash[corp];
-          //       filted.push(temp);
-          //   }
-          // }
-          // list.forEach((v, i) => {
-          //   if (hash.hasOwnProperty(v.company)) {
-          //     temp = filted[hash[v.company]];
-          //     temp.number += v.number;
-          //     temp.positions.push(v.position.slice(0,5));
-          //     filted[hash[v.company]] = temp;
-          //   } else {
-          //     temp = {
-          //       'company': v.company,
-          //       'number': parseInt(v.number, 10),
-          //       'positions': [v.position.slice(0,5)]
-          //     };
-          //     hash[v.company] = ii;
-          //     ++ii;
-          //     filted.push(temp);
-          //   }
-          // });
+
           filted.sort((a, b)=>{
             return b.number - a.number;
           });
@@ -75,12 +50,6 @@ Page({
             list: filted,
             corpMode: true
           });
-        } else {
-          _this.setData({
-            list: list,
-            corpMode: false
-          });
-        }
       },
       fail: function(res) {
         // fail
@@ -98,7 +67,7 @@ Page({
   },
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
-    this.getInfo([app.globalData.domain, 'webapi', this.data.kind, ''].join('/'), this.data.corpMode);
+    this.getInfo([app.globalData.domain, 'webapi', this.data.kind, ''].join('/'));
   },
   onReady: function() {
     // 页面渲染完成

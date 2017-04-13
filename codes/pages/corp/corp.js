@@ -2,6 +2,7 @@
 var app = getApp();
 Page({
   data: {
+    isiOS:app.globalData.isiOS,
     corp: '',
     positionls: [],
     salary: '0',
@@ -59,19 +60,11 @@ function analyze(ls, that) {
   // ls.sort(function(a,b){
   //   return parseInt(b.time.slice(4),10) - parseInt(a.time.slice(4),10);
   // });
-  var detaills = ls.slice(0, 5);
-  detaills = detaills.map((v, i) => {
-    if (v.remark.length > 60) {
-      v.remark = v.remark.slice(0, 60).concat('......');
-    }
-    return v;
-  });
   that.setData({
     positionls: ls.slice(0, 5).map((v, i) => {
       return v.position;
     }),
-    offerls: ls.slice(5),
-    salary: ls[0].salary,
-    detaills: detaills
+    offerls: ls,
+    salary: ls[0].salary
   });
 }

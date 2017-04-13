@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/mine/mine",
     "pages/hot/hot",
     "pages/offer/offer",
     "pages/main/main",
@@ -23,7 +24,7 @@
       "pagePath": "pages/hot/hot",
       "text": "corp"
     },{
-      "pagePath": "pages/main/main",
+      "pagePath": "pages/mine/mine",
       "text": "mine"
     }]
   }

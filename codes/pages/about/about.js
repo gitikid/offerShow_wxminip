@@ -2,6 +2,7 @@
 var app = getApp();
 Page({
   data: {
+    isiOS:app.globalData.isiOS,
     anim: {}
   },
   onLoad: function(options) {
@@ -15,7 +16,7 @@ Page({
     this.setData({
       anim: animation.export()
     });
-
+    console.log(wx.getSystemInfoSync());
   },
   onReady: function() {
     // 页面渲染完成
