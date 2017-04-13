@@ -22,6 +22,7 @@ page {
 }
 
 .my-top-style {
+  font-weight: bold;
   color: white;
   background: dodgerblue;
   border: none;
@@ -88,6 +89,10 @@ page {
 .my-panel-cell {
   color: dodgerblue;
   /*font-size: 32rpx;*/
+}
+
+.my-text-center{
+  text-align: center;
 }
 
 .my-text-left {

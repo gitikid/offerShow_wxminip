@@ -1,31 +1,32 @@
 <!--pages/about/about.wxml-->
-<view class="maintop maintop-style">
-<view class="topbtn" bindtap="tapBack">Back</view>
-<view class="toptext" >版权和声明</view>
+<view class="weui-flex my-top my-top-style">
+  <view class="my-btn-icon" bindtap="tapBack">
+    <image src="../../static/icon_nav_back.png"></image>
+  </view>
+  <view class="weui-flex__item">
+    <view class="placeholder">关于</view>
+  </view>
 </view>
 <view class="avatar" >
 <image animation="{{anim}}" mode="aspectFill" src="../../static/about.jpg"></image>
 </view>
-<view class="text">
-该小程序基于MIT License开发，在原版offershow的api基础上封装而成，仅用于练习。
-</view>
-<view class="text">
-在此感谢原版offershow 校招薪水及作者大佬。
-</view>
-<view class="text center">
-<text>
-原版主页：www.ioffershow.com
-</text>
-</view>
-<view class="text center">
-<text>
-源码github地址：https://github.com/wanghsinche/offerShow_wxminip
-</text>
-</view>
-<view class="text center">
-<text>
-我的邮箱：wanghsinche@hotmail.com 
-</text>
-</view>
 
-
+<view class="weui-article">
+    <view class="weui-article__h1 my-text-center">版权和声明</view>
+    <view class="weui-article__section">
+        <view class="weui-article__section">
+            <view class="weui-article__p">
+                该小程序基于MIT License开发，在原版offershow的api基础上封装而成，仅用于学习交流。在此感谢原版offershow 校招薪水及作者大佬。
+            </view>
+            <view class="weui-article__p">
+                原版主页：www.ioffershow.com
+            </view>
+            <view class="weui-article__p">
+                源码github地址：https://github.com/wanghsinche/offerShow_wxminip
+            </view>
+            <view class="weui-article__p">
+                我的邮箱：wanghsinche@hotmail.com
+            </view>
+        </view>
+    </view>
+</view>
