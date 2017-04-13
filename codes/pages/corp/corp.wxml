@@ -26,7 +26,7 @@
     <view class="weui-panel__bd">
       <view class="weui-media-box weui-media-box_text">
         <view class="weui-media-box__desc">
-          <text class="my-panel-cell">{{salary}}</text>
+          <span class="my-panel-cell my-panel-tag">{{salary}}</span>
         </view>
       </view>
     </view>
@@ -38,7 +38,7 @@
     <view class="weui-panel__bd">
       <navigator class="weui-media-box weui-media-box_text" wx:for="{{detaills}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}">
         <view class="weui-media-box__desc">
-            <text class="my-panel-cell my-text-left">{{item.city}}</text>
+            <view class="my-panel-cell my-text-left">{{item.city}}</view>
             <view class="my-panel-cell my-text-right">热度：{{item.number}}</view>      
         </view>          
         <view class="weui-media-box__title">
@@ -48,14 +48,16 @@
           {{item.remark}}
         </view>
         <view class="weui-media-box__desc">
-          <text class="my-panel-cell my-text-left"></text>
-          <text class="my-panel-cell my-text-right">工资：{{item.salary}}</text>
+          <view class="my-panel-cell my-text-alignright">工资：{{item.salary}}</view>
         </view>
       </navigator>
       <navigator class="weui-media-box weui-media-box_text" wx:for="{{offerls}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}">
+        <view class="weui-media-box__desc">
+            <view class="my-panel-cell my-text-left">{{item.city}}</view>
+            <view class="my-panel-cell my-text-right">热度：{{item.number}}</view>      
+        </view>       
         <view class="weui-media-box__title">
-          <text class="my-text-left">{{item.position}}</text>
-          <text class="my-text-right my-panel-cell">热度：{{item.number}}</text>
+          {{item.position}}
         </view>
       </navigator>
     </view>
