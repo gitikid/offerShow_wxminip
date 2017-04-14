@@ -20,7 +20,7 @@ Page({
       duration: 10000
     });
     app.getAjaxData({
-      url: [app.globalData.domain, 'webapi/jobsearch', ''].join('/'),
+      url: [app.globalData.domain, 'webapi/jobsearch/'].join('/'),
       data: {
         'content': options.name
       },

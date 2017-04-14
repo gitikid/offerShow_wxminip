@@ -1,49 +1,92 @@
-<!--pages/detail/detail.wxml-->
-<view class="maintop maintop-style">
-<view class="topbtn" bindtap="tapAbove">Back</view>
-<view class="toptext" >发布新信息</view>
+<view class="weui-flex my-top my-top-fixed my-top-style">
+  <view class="my-btn-icon" bindtap="tapAbove" >
+    <image src="../../static/icon_nav_back.png"></image>
+  </view>
+  <view class="weui-flex__item">
+    <view class="placeholder">匿名发布offer</view>
+  </view>
 </view>
-    <view class="outline">
-        <view class="row">
-            <view class="title">行业：</view>
-            <view class="value"><picker bindchange="changeCate" value="{{cateIndex}}" range="{{category}}">
-            <view class="pill">
-            {{category[cateIndex]}}  ▼
-            </view>
-    </picker></view>
-        </view>
-        <view class="row">
-            <view class="title">工地：</view>
-            <view class="value"><input bindinput="onInput" placeholder="公司名称" id="company" /></view>
-        </view>
-        <view class="row">
-            <view class="title">职位：</view>
-            <view class="value"><input bindinput="onInput" id="position" placeholder="职位名称" /></view>
-        </view>
-        <view class="row">
-            <view class="title">地点：</view>
-            <view class="value"><input bindinput="onInput" id="city" placeholder="城市，如广州" /></view>
-        </view>
-        <view class="row">
-            <view class="title">工资：</view>
-            <view class="value"><input  bindinput="onInput" id="salary" placeholder="薪水" /></view>
-        </view>
-        <view class="row">
-            <view class="title">学历：</view>
-            <view class="value"><picker bindchange="changeTitle" value="{{titleIndex}}" range="{{title}}">
-            <view class="pill">
-            {{title[titleIndex]}}  ▼
-            </view>
-    </picker></view>    
-    </view>
 
-    </view>    
-    <view class="h2">备注：</view>
-    <view class="desc" id="desc"><textarea bindfocus="onFocus"  bindblur="onBlur"  bindinput="onInput" id="remark" placeholder="备注，如是否special等等" />
-    <!--<view class="replacetext" hidden="{{!showMsg}}" >{{remark}}</view>-->
-    </view>
-    <view class="foot" style="height:320rpx;" hidden="{{!isInput}}"></view>
-    
+<view class="my-noscroll" >
+
+        <view id="basic" class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">公司</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="onInput" placeholder="公司名称" id="company" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">职位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="onInput" id="position" placeholder="职位名称" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">地点</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="onInput" id="city" placeholder="城市，如广州" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">职位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="onInput" id="position" placeholder="职位名称" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">工资</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="onInput" id="salary" placeholder="薪水" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">学历</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="changeTitle" value="{{titleIndex}}" range="{{title}}">
+                            <view class="weui-input weui-btn weui-btn_plain-default my-panel-cell">
+                            {{title[titleIndex]}}  ▼
+                            </view>
+                    </picker>
+                </view>
+            </view>    
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">行业</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="changeCate" value="{{cateIndex}}" range="{{category}}">
+                            <view class="weui-input weui-btn weui-btn_plain-default my-panel-cell">
+                            {{category[cateIndex]}}  ▼
+                            </view>
+                    </picker>
+                </view>
+            </view>                                
+        </view>
+
+        <view class="weui-cells__title">备注</view>
+        <view id="remark" class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" bindfocus="onFocus"  bindblur="onBlur"  bindinput="onInput" id="remark" placeholder="备注，如是否special等等"  style="height: 3.3em" />
+                </view>
+            </view>
+        </view>    
+
+        <view class="foot" style="height:320rpx;" hidden="{{!isInput}}"></view>
+</view>
 
 
 <view class="bottom">

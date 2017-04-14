@@ -5,6 +5,7 @@ Page({
     list: [],
     kind: 'jobhot',
     keyword: '',
+    anim: {}
   },
   getInfo: function(urltext, pastData = {}) {
     var _this = this;
@@ -72,9 +73,19 @@ Page({
   onReady: function() {
     // 页面渲染完成
   },
-  onShow: function() {
-    // 页面显示
-  },
+  // onShow: function() {
+  //   // 页面显示
+  //   var animation = wx.createAnimation({
+  //     duration: 300,
+  //     timingFunction: "ease",
+  //     delay: 0
+  //   });
+  //   animation.translate(0, -20).step();
+  //   animation.translate(0, 0).step();
+  //   this.setData({
+  //     anim: animation.export()
+  //   });        
+  // },
   onHide: function() {
     // 页面隐藏
   },

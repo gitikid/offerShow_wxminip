@@ -4,12 +4,26 @@ Page({
         list: [],
         kind: 'jobtotal',
         keyword: '',
-        inputShowed: false
+        inputShowed: false,
+        hasData: true,
+        anim: {}
     },
     onLoad: function(options) {
-    // 页面初始化 options为页面跳转所带来的参数
+    // 页面初始化 options为页面跳转所带来的参数     
         this.getInfo([app.globalData.domain, 'webapi', this.data.kind, ''].join('/'));
     },
+    // onShow: function(){
+    //     var animation = wx.createAnimation({
+    //       duration: 300,
+    //       timingFunction: "ease",
+    //       delay: 0
+    //     });
+    //     animation.translate(0, -20).step();
+    //     animation.translate(0, 0).step();
+    //     this.setData({
+    //       anim: animation.export()
+    //     });  
+    // },
     getInfo: function(urltext, pastData = {}) {
         var _this = this;
         wx.showToast({
@@ -34,7 +48,8 @@ Page({
               wx.hideToast();
             }
             _this.setData({
-              list: list
+              list: list,
+              hasData: list.length?true:false
             });
           },
           fail: function(res) {

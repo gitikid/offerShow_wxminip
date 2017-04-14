@@ -30,7 +30,7 @@ page {
   padding: 0 10px 0 10px;
 }
 
-.weui-search-bar__cancel-btn, .weui-cell__bd {
+.weui-search-bar__cancel-btn{
   color: dodgerblue;
 }
 

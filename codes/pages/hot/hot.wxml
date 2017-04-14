@@ -21,9 +21,10 @@
     </view>
     <view class="weui-panel__ft">
       <view class="weui-cell weui-cell_access weui-cell_link">
-        <view class="weui-cell__bd">查看详情</view>
+        <view class="weui-cell__bd my-panel-cell">查看详情</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </view>
     </view>
   </navigator>
 </view>
+<include src="../../utils/postButton.wxml"/>

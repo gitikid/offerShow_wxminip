@@ -39,7 +39,7 @@ App({
         return wx.getStorageSync('fav')[key];
       }
       else{
-        return null;
+        return undefined;
       }
     }
     
