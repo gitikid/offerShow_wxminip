@@ -1,15 +1,30 @@
 {
   "pages":[
-    "pages/main/main",
+    "pages/offer/offer",    
+    "pages/hot/hot",    
+    "pages/post/post",        
+    "pages/mine/mine",
     "pages/corp/corp",
     "pages/detail/detail",
-    "pages/post/post",
     "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#1e90ff",
     "navigationBarTitleText": "offerShow·简约版",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
+    },
+  "tabBar": {
+    "selectedColor": "#1e90ff",
+    "list": [{
+      "pagePath": "pages/hot/hot",
+      "text": "公司榜单"      
+    }, {
+      "pagePath": "pages/offer/offer",
+      "text": "offer秀"      
+    },{
+      "pagePath": "pages/mine/mine",
+      "text": "我的收藏"
+    }]
   }
 }

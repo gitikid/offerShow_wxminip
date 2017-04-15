@@ -37,7 +37,9 @@ Page({
     position:'',
     city:'',
     salary:'',
-    remark:''
+    remark:'',
+    isInput:false,
+    toViewId:'basic'
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -53,6 +55,18 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  onFocus:function(){
+    this.setData({
+      isInput:true,
+      toViewId:'remark'
+    });
+  },
+  onBlur:function(){
+    this.setData({
+      isInput:false,
+      toViewId:'basic'
+    });    
   },
   changeCate:function(e){
     this.setData({
