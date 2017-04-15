@@ -84,7 +84,7 @@ Page({
     if(text === ''){
       return;
     }
-    if(text.length > 45 && e.id !== 'desc'){
+    if(text.length > 10 && e.target.id === 'salary'){
       wx.showToast({
         'title':'超出字数',
         'icon':'loading',
@@ -92,7 +92,15 @@ Page({
       });
       return;
     }
-    if(text.length > 450 && e.id === 'desc'){
+    if(text.length > 45 && e.target.id !== 'desc'){
+      wx.showToast({
+        'title':'超出字数',
+        'icon':'loading',
+        'duration':1000
+      });
+      return;
+    }
+    if(text.length > 450 && e.target.id === 'desc'){
       wx.showToast({
         'title':'超出字数',
         'icon':'loading',
