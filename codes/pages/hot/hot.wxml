@@ -13,18 +13,18 @@
     </view>
     <view class="weui-panel__bd">
       <view class="weui-media-box weui-media-box_text">
-        <view class="weui-media-box__desc weui-media-box__title_in-text">热门职位：</view>
+        <view class="weui-media-box__desc weui-media-box__title_in-text my-panel-cell">热门职位：</view>
         <view class="weui-media-box__desc">
           <span class="my-panel-tag" wx:for="{{item.positions}}" wx:key="{{*this}}" wx:for-item="tag">{{tag}}</span> 
         </view>
       </view>
     </view>
-    <view class="weui-panel__ft">
+    <!--<view class="weui-panel__ft">
       <view class="weui-cell weui-cell_access weui-cell_link">
         <view class="weui-cell__bd my-panel-cell">查看详情</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </view>
-    </view>
+    </view>-->
   </navigator>
 </view>
 <include src="../../utils/postButton.wxml"/>

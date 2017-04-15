@@ -29,9 +29,13 @@ page {
   box-shadow: 0 2px 2px gray;
   padding: 0 10px 0 10px;
 }
-
+.weui-search-bar{
+  background: dodgerblue;
+  border-color: dodgerblue;
+  box-shadow: 0 2px 2px gray;
+}
 .weui-search-bar__cancel-btn{
-  color: dodgerblue;
+  color: white;
 }
 
 .my-btn-more {

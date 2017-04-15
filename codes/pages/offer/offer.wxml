@@ -23,23 +23,23 @@
   <navigator class="weui-panel weui-panel_access" wx:for="{{list}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}">
     <view class="weui-panel__hd">
       <span class="my-text-left">{{item.company}}</span>
-      <span class="my-text-right">{{item.city}}</span>
+      <span class="my-text-right my-panel-cell">工资：{{item.salary}}</span>
     </view>
     <view class="weui-panel__bd">
       <view class="weui-media-box weui-media-box_text">
         <view class="weui-media-box__title weui-media-box__title_in-text">{{item.position}}</view>
         <view class="weui-media-box__desc">
-          <span class="my-text-left ">热度：{{item.number}}</span>
+          <span class="my-text-left my-panel-cell">热度：{{item.number}}</span>
           <span class="my-text-right my-panel-cell">可信度：{{item.score}}</span>
         </view>
       </view>
     </view>
-    <view class="weui-panel__ft">
+    <!--<view class="weui-panel__ft">
       <view class="weui-cell weui-cell_access weui-cell_link">
         <view class="weui-cell__bd my-panel-cell">{{item.time}}</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </view>
-    </view>
+    </view>-->
   </navigator>
 </view>
 <view class="weui-loadmore weui-loadmore_line">

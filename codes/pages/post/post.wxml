@@ -90,6 +90,6 @@
 
 
 <view class="bottom">
+    <view bindtap="tapAbove" class="btn bad" data-action="2">放弃</view>    
     <view bindtap="tapConfirm" class="btn good" data-action="1">确定</view>
-    <view bindtap="tapAbove" class="btn bad" data-action="2">放弃</view>
 </view>

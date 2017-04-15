@@ -8,7 +8,90 @@
   </view>
 </view>
 <scroll-view scroll-y="true" class="my-scroll">
-    <view class="weui-form-preview">
+        <view id="basic" class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">职位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-input my-panel-cell">{{detail.position}}</view>
+                </view>
+            </view>            
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">行业</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-input">{{detail.hangye}}</view>
+                </view>
+            </view>            
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">公司</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-input">{{detail.company}}</view>
+                </view>
+            </view>                        
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">地点</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-input">{{detail.city}}</view>
+                </view>
+            </view>                        
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">学历</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-input">{{detail.xueli}}</view>
+                </view>
+            </view>              
+            <view class="weui-cell weui-cell_input my-panel-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">工资</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-input">{{detail.salary}}</view>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input my-panel-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">可信度</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-input">{{detail.score}}</view>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input my-panel-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">热度</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-input">{{detail.number}}</view>
+                </view>
+            </view>                                  
+        </view>
+
+        <view class="weui-cells__title">备注</view>
+        <view id="remark" class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-textarea" >{{detail.remark}}</view>
+                </view>
+            </view>
+        </view>    
+
+<view class="weui-form-preview">
+        <view class="weui-form-preview__ft">
+            <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="tapRank" data-rank="jobdislike">不真实</view>        
+            <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="tapRank"  data-rank="joblike">可信</view>
+        </view>
+</view>
+
+    <!--<view class="weui-form-preview">
         <view class="weui-form-preview__hd">
             <view class="weui-form-preview__item">
                 <view class="weui-form-preview__label">职位：</view>
@@ -33,15 +116,15 @@
                 <view class="weui-form-preview__value">{{detail.xueli}}</view>
             </view>
             <view class="weui-form-preview__item">
-                <view class="weui-form-preview__label">工资：</view>
-                <view class="weui-form-preview__value">{{detail.salary}}</view>
+                <view class="weui-form-preview__label my-panel-cell">工资：</view>
+                <view class="weui-form-preview__value my-panel-cell">{{detail.salary}}</view>
             </view>
             <view class="weui-form-preview__item ">
-                <view class="weui-form-preview__label">热度：</view>
+                <view class="weui-form-preview__label my-panel-cell">热度：</view>
                 <view class="weui-form-preview__value my-panel-cell">{{detail.number}}</view>
             </view>            
             <view class="weui-form-preview__item ">
-                <view class="weui-form-preview__label">可信度：</view>
+                <view class="weui-form-preview__label my-panel-cell">可信度：</view>
                 <view class="weui-form-preview__value my-panel-cell">{{detail.score}}</view>
             </view>   
             <view class="weui-form-preview__item">
@@ -51,13 +134,13 @@
         </view>     
 
         <view class="weui-form-preview__ft">
-            <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="saveToFav" wx:if="{{!hasFav}}">收藏</view>
-            <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="removeFromFav" wx:if="{{hasFav}}">取消收藏</view>
+            <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="tapRank" data-rank="jobdislike">不真实</view>        
+            <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="tapRank"  data-rank="joblike">可信</view>
         </view>
-    </view>
+    </view>-->
 </scroll-view>
 
 <view class="bottom">
-    <view bindtap="tapRank" class="btn bad" data-rank="jobdislike">不真实</view>
-    <view bindtap="tapRank" class="btn good" data-rank="joblike">可信</view>
+    <view class="btn bad" bindtap="removeFromFav" wx:if="{{hasFav}}">取消收藏</view>
+    <view  class="btn good" bindtap="saveToFav" wx:if="{{!hasFav}}">加入收藏</view>
 </view>

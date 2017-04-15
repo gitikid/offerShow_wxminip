@@ -7,6 +7,22 @@ Page({
     keyword: '',
     anim: {}
   },
+  onShareAppMessage: function () {
+    return {
+      title: 'offerShow·校招offer查询平台',
+      path: '/offer/offer',
+      success: function(res) {
+        wx.showToast({
+          'title':'分享成功',
+          'icon':'success',
+          'duration': 1000
+        });
+      },
+      fail: function(res) {
+        // 分享失败
+      }
+    }
+  },     
   getInfo: function(urltext, pastData = {}) {
     var _this = this;
     wx.showToast({
@@ -32,8 +48,9 @@ Page({
           list.forEach((v, i) => {
             if (hash.hasOwnProperty(v.company)) {
               hash[v.company].number += v.number;
-              hash[v.company].positions.push(v.position.slice(0,5));
-
+              if(hash[v.company].positions.length < 3){
+                hash[v.company].positions.push(v.position.slice(0,5));
+              }
             } else {
               hash[v.company] = {
                 'company': v.company,

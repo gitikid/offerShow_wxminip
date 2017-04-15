@@ -6,3 +6,7 @@
 .weui-form-preview__btn.weui-form-preview__btn_primary{
 	color: dodgerblue;
 }
+
+page{
+	background: white;
+}

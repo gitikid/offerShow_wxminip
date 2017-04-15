@@ -1,9 +1,9 @@
 {
   "pages":[
+    "pages/offer/offer",    
     "pages/hot/hot",    
     "pages/post/post",        
     "pages/mine/mine",
-    "pages/offer/offer",
     "pages/corp/corp",
     "pages/detail/detail",
     "pages/about/about"
@@ -17,11 +17,11 @@
   "tabBar": {
     "selectedColor": "#1e90ff",
     "list": [{
-      "pagePath": "pages/offer/offer",
-      "text": "offer秀"
-    }, {
       "pagePath": "pages/hot/hot",
-      "text": "热门排行"
+      "text": "公司榜单"      
+    }, {
+      "pagePath": "pages/offer/offer",
+      "text": "offer秀"      
     },{
       "pagePath": "pages/mine/mine",
       "text": "我的收藏"

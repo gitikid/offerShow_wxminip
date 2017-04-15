@@ -6,6 +6,22 @@ Page({
     id: '',
     hasFav: false,
   },
+  onShareAppMessage: function () {
+    return {
+      title: 'offerShow·' + this.data.detail.position,
+      path: '/detail/detail?id=' + this.data.id,
+      success: function(res) {
+        wx.showToast({
+          'title':'分享成功',
+          'icon':'success',
+          'duration': 1000
+        });
+      },
+      fail: function(res) {
+        // 分享失败
+      }
+    }
+  },  
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
     var temp,
@@ -127,6 +143,9 @@ Page({
       "icon":"success",
       "duration":1500
     });
+  },
+  toShare: function(){
+    wx.showShareMenu();
   },
   tapRank: function(e) {
     var that = this;

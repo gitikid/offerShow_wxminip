@@ -8,22 +8,35 @@ Page({
         hasData: true,
         anim: {}
     },
+    onShareAppMessage: function () {
+      return {
+        title: 'offerShow·校招offer查询平台',
+        path: '/about/about',
+        success: function(res) {
+          wx.showToast({
+            'title':'分享成功',
+            'icon':'success',
+            'duration': 1000
+          });
+        },
+        fail: function(res) {
+          // 分享失败
+        }
+      }
+    },    
     onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数     
         this.getInfo([app.globalData.domain, 'webapi', this.data.kind, ''].join('/'));
     },
-    // onShow: function(){
-    //     var animation = wx.createAnimation({
-    //       duration: 300,
-    //       timingFunction: "ease",
-    //       delay: 0
-    //     });
-    //     animation.translate(0, -20).step();
-    //     animation.translate(0, 0).step();
-    //     this.setData({
-    //       anim: animation.export()
-    //     });  
-    // },
+    onShow: function(){
+      if(this.data.keyword !== ''){
+        this.setData({
+          keyword: '',   
+          inputShowed: false       
+        });
+        this.onLoad();
+      }
+    },
     getInfo: function(urltext, pastData = {}) {
         var _this = this;
         wx.showToast({

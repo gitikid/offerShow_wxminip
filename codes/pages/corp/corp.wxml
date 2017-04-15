@@ -29,9 +29,29 @@
           <span class="my-panel-cell my-panel-tag">{{salary}}</span>
         </view>
       </view>
-    </view>
+    </view>   
   </view>
-  <view class="weui-panel weui-panel_access">
+  <navigator class="weui-panel weui-panel_access" wx:for="{{offerls}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}&getdata=request">
+    <view class="weui-panel__hd">
+      <span class="my-text-left my-panel-cell">{{item.position}}</span>
+      <span class="my-text-right my-panel-cell">工资：{{item.salary}}</span>
+    </view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+        <!--<view class="weui-media-box__title weui-media-box__title_in-text">{{item.position}}</view>-->
+        <view class="weui-media-box__desc">
+        	{{item.remark}}
+        </view>
+      </view>
+    </view>
+    <!--<view class="weui-panel__ft">
+      <view class="weui-cell weui-cell_access weui-cell_link">
+        <view class="weui-cell__bd my-panel-cell">{{item.time}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </view>-->
+  </navigator>
+  <!--<view class="weui-panel weui-panel_access">
     <view class="weui-panel__hd">
       <view class="weui-media-box__desc weui-media-box__title_in-text my-panel-title">详细评价(点击查看详情)：</view>
     </view>
@@ -48,5 +68,5 @@
         </view>
       </navigator>
     </view>
-  </view>
+  </view>-->
 </view>
