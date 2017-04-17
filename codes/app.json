@@ -1,15 +1,36 @@
 {
   "pages":[
-    "pages/main/main",
+    "pages/offer/offer",    
+    "pages/hot/hot",    
+    "pages/post/post",        
+    "pages/mine/mine",
     "pages/corp/corp",
     "pages/detail/detail",
-    "pages/post/post",
     "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "offerShow·简约版",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#1e90ff",
+    "navigationBarTitleText": "OfferShow-校招薪水",
+    "navigationBarTextStyle":"white"
+    },
+  "tabBar": {
+    "selectedColor": "#1e90ff",
+    "list": [{
+      "pagePath": "pages/hot/hot",
+      "iconPath": "image/ing.png",
+      "selectedIconPath": "image/ing-active.png",
+      "text": "热门公司"      
+    }, {
+      "pagePath": "pages/offer/offer",
+      "iconPath": "image/icon_normal.png",
+      "selectedIconPath": "image/icon_pressed.png",
+      "text": "薪资主页"      
+    },{
+      "pagePath": "pages/mine/mine",
+      "iconPath": "image/coming.png",
+      "selectedIconPath": "image/coming-active.png",
+      "text": "我的收藏"
+    }]
   }
 }

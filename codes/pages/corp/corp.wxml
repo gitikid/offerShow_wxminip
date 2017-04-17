@@ -1,45 +1,72 @@
+
 <!--pages/corp/corp.wxml-->
-<view class="maintop maintop-style">{{corp}}</view>
-<view class="detail">
-    <view class="h2">热门职位：</view>
-    <view class="tagls" >
-        <view class="tag" wx:for="{{positionls}}" wx:key="{{*this}}">{{item}}</view>
-    </view>
-    <view class="h2">最可信工资:</view>
-    <view class="tagls">
-        <view class="tag">{{salary}}</view>
-    </view>
+<view class="weui-flex my-top my-top-fixed my-top-style">
+  <view class="my-btn-icon" bindtap="tapBack" >
+    <image src="../../static/icon_nav_back.png"></image>
+  </view>
+  <view class="weui-flex__item">
+    <view class="placeholder">{{corp}}</view>
+  </view>
 </view>
-<view class="detaills" >
-    <view class="h2" id="list">详细评价(点击查看详情):</view>
-    <navigator wx:for="{{detaills}}" wx:key="{{item.id}}" url="../detail/detail?id={{item.id}}">
-    <view class="card">
-    <view class="card-r1">
-        <view class="card-c-left">{{item.city}}</view>
-        <view class="card-c-right">可信度:{{item.score}}</view>
-    </view>    
-    <view class="card-r2">
-        <view class="card-c-left">{{item.position}}</view>
-        <view class="card-c-right">工资:{{item.salary}}</view>
+<view class="my-noscroll">
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">
+      <view class="weui-media-box__desc weui-media-box__title_in-text my-panel-title">热门职位：</view>
     </view>
-    <view class="card-r3">{{item.remark}}</view>
-    <view class="card-r3">
-        <view class="card-c-left"></view>
-        <view class="card-c-right">{{item.time}}</view>    
-    </view>    
-    </view>
-    </navigator>
-</view>
-<view class="simplels">
-    <navigator wx:for="{{offerls}}" wx:key="{{item.id}}"url="../detail/detail?id={{item.id}}">
-        <view class="card">
-            <view class="card-r2">
-                <text>{{item.position}}</text>            
-            </view>
-            <view class="card-r3">
-                <view class="card-c-left"></view>
-                <view class="card-c-right">{{item.time}}</view>    
-            </view>           
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__desc">
+          <span class="my-panel-tag" wx:for="{{positionls}}" wx:key="{{*this}}">{{item}}</span>
         </view>
-    </navigator>
+      </view>
+    </view>
+    <view class="weui-panel__hd">
+      <view class="weui-media-box__desc weui-media-box__title_in-text my-panel-title">最可信工资：</view>
+    </view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__desc">
+          <span class="my-panel-cell my-panel-tag">{{salary}}</span>
+        </view>
+      </view>
+    </view>   
+  </view>
+  <navigator class="weui-panel weui-panel_access" wx:for="{{offerls}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}&getdata=request">
+    <view class="weui-panel__hd">
+      <span class="my-text-left my-panel-cell">{{item.position}}</span>
+      <span class="my-text-right my-panel-cell">工资：{{item.salary}}</span>
+    </view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+        <!--<view class="weui-media-box__title weui-media-box__title_in-text">{{item.position}}</view>-->
+        <view class="weui-media-box__desc">
+        	{{item.remark}}
+        </view>
+      </view>
+    </view>
+    <!--<view class="weui-panel__ft">
+      <view class="weui-cell weui-cell_access weui-cell_link">
+        <view class="weui-cell__bd my-panel-cell">{{item.time}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </view>-->
+  </navigator>
+  <!--<view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">
+      <view class="weui-media-box__desc weui-media-box__title_in-text my-panel-title">详细评价(点击查看详情)：</view>
+    </view>
+    <view class="weui-panel__bd">
+      <navigator class="weui-media-box weui-media-box_text" wx:for="{{offerls}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}">
+        <view class="weui-media-box__title">
+          {{item.position}}
+        </view>
+        <view class="weui-media-box__desc">
+          {{item.remark}}
+        </view>         
+        <view class="weui-media-box__desc">
+            <view class="my-panel-cell my-text-alignright">热度：{{item.number}}</view>
+        </view>
+      </navigator>
+    </view>
+  </view>-->
 </view>
