@@ -9,8 +9,8 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: 'offerShow·校招offer查询平台',
-      path: '/offer/offer',
+      title: 'OfferShow-最可信的校招薪水交流平台',
+      path: 'pages/hot/hot',
       success: function(res) {
         wx.showToast({
           'title':'分享成功',

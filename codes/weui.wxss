@@ -782,8 +782,8 @@ icon {
 }
 .weui-panel__hd {
   padding: 14px 15px 10px;
-  color: #999999;
-  font-size: 13px;
+  color: #000000;
+  font-size: 16px;
   position: relative;
 }
 .weui-panel__hd:after {
@@ -798,7 +798,7 @@ icon {
   left: 15px;
 }
 .weui-media-box {
-  padding: 15px;
+  padding: 5px 15px 15px 15px;
   position: relative;
 }
 .weui-media-box:before {

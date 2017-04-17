@@ -7,22 +7,22 @@
   <navigator class="weui-panel weui-panel_access" wx:for="{{list}}" wx:key="{{*this}}" url="../detail/detail?id={{item.id}}&getdata=request">
     <view class="weui-panel__hd">
       <span class="my-text-left">{{item.company}}</span>
-      <span class="my-text-right">{{item.city}}</span>
+      <span class="my-text-right">{{item.city}}-{{item.position}}</span>
     </view>
-    <view class="weui-panel__bd">
+    <!--<view class="weui-panel__bd">
       <view class="weui-media-box weui-media-box_text">
         <view class="weui-media-box__title weui-media-box__title_in-text">{{item.position}}</view>
         <view class="weui-media-box__desc">
         	{{item.remark}}
         </view>
       </view>
-    </view>
-    <view class="weui-panel__ft">
+    </view>-->
+    <!--<view class="weui-panel__ft">
       <view class="weui-cell weui-cell_access weui-cell_link">
         <view class="weui-cell__bd my-panel-cell">{{item.time}}</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </view>
-    </view>
+    </view>-->
   </navigator>
 </view>
 <view class="weui-loadmore weui-loadmore_line">

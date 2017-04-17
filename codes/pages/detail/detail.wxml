@@ -1,13 +1,13 @@
 <!--pages/detail/detail.wxml-->
-<view class="weui-flex my-top  my-top-style">
+<view class="weui-flex my-top my-top-fixed  my-top-style">
   <view class="my-btn-icon" bindtap="tapBack" >
     <image src="../../static/icon_nav_back.png"></image>
   </view>
   <view class="weui-flex__item">
-    <view class="placeholder">offer详情</view>
+    <view class="placeholder">薪资详情</view>
   </view>
 </view>
-<scroll-view scroll-y="true" class="my-scroll">
+<view class="my-noscroll">
         <view id="basic" class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_input ">
                 <view class="weui-cell__hd">
@@ -30,7 +30,10 @@
                     <view class="weui-label">公司</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <view class="weui-input">{{detail.company}}</view>
+                    <view class="weui-input">
+                    <navigator url="../corp/corp?name={{detail.company}}" class="my-panel-link">{{detail.company}}</navigator>
+                   </view>
+                
                 </view>
             </view>                        
             <view class="weui-cell weui-cell_input">
@@ -67,7 +70,7 @@
             </view>
             <view class="weui-cell weui-cell_input my-panel-cell">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">热度</view>
+                    <view class="weui-label">浏览量</view>
                 </view>
                 <view class="weui-cell__bd">
                     <view class="weui-input">{{detail.number}}</view>
@@ -90,6 +93,8 @@
             <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="tapRank"  data-rank="joblike">可信</view>
         </view>
 </view>
+
+<view class="my-foot"></view>
 
     <!--<view class="weui-form-preview">
         <view class="weui-form-preview__hd">
@@ -138,7 +143,7 @@
             <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="tapRank"  data-rank="joblike">可信</view>
         </view>
     </view>-->
-</scroll-view>
+</view>
 
 <view class="bottom">
     <view class="btn bad" bindtap="removeFromFav" wx:if="{{hasFav}}">取消收藏</view>

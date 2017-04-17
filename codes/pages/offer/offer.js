@@ -10,8 +10,8 @@ Page({
     },
     onShareAppMessage: function () {
       return {
-        title: 'offerShow·校招offer查询平台',
-        path: '/about/about',
+        title: 'OfferShow-最可信的校招薪水交流平台',
+        path: 'pages/offer/offer',
         success: function(res) {
           wx.showToast({
             'title':'分享成功',

@@ -8,8 +8,8 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: 'offerShow·' + this.data.detail.position,
-      path: '/detail/detail?id=' + this.data.id,
+      title: 'OfferShow-' + this.data.detail.company +'-'+ this.data.detail.position,
+      path: 'pages/detail/detail?id=' + this.data.id,
       success: function(res) {
         wx.showToast({
           'title':'分享成功',

@@ -1,6 +1,6 @@
 <view class="weui-flex my-top my-top-fixed my-top-style">
   <view class="weui-flex__item">
-    <view class="">公司热度排行</view>
+    <view class="">热门公司</view>
   </view>
 </view>
 <view class="my-noscroll">
@@ -8,7 +8,7 @@
     <view class="weui-panel__hd">
       <view class="weui-media-box__title my-panel-title my-text-left">{{item.company}}</view>
       <view class="my-panel-cell my-text-right">
-        热度：{{item.number}}
+        浏览量：{{item.number}}
       </view>
     </view>
     <view class="weui-panel__bd">

@@ -82,24 +82,9 @@ App({
       }, // 设置请求的 header
       success: function(res) {
         // success
-        var sour = {},
-        temp = '',
-        matchresult = [];
+        var sour = {};
         if (typeof param.success === 'function' && res.data.r === 1) {
           if (res.data.info instanceof Array) {
-            //去除奇怪的工资
-            if(false){
-              res.data.info = res.data.info.map((v, i)=>{
-                temp = v.salary;
-                matchresult = v.salary.match((/.*?[\,|\;|\，|\；|\、|\+|\s]/));
-                v.salary = matchresult?matchresult[0]:v.salary;
-                if(matchresult){
-                  v.remark += temp.slice(temp.indexOf(v.salary) + v.salary.length);
-                }
-                return v;
-              });
-            }
-            //结束
             res.data.info.forEach((v, i) => {
               _this.setCache(v.id, v);
             });

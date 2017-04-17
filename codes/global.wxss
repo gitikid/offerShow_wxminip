@@ -45,7 +45,7 @@ page {
 
 .my-btn-icon image {
   display: inline-block;
-  height: 28px;
+  height: 25px;
   width: 28px;
   vertical-align: middle;
 }
@@ -95,6 +95,13 @@ page {
   /*font-size: 32rpx;*/
 }
 
+.my-panel-link{
+  color: dodgerblue;
+}
+.my-panel-link::after{
+  content: "  >>"
+}
+
 .my-text-center{
   text-align: center;
 }
@@ -106,7 +113,7 @@ page {
 
 .my-text-right {
   float: right;
-  display: inline-block;
+  display: block;
 }
 
 
@@ -121,4 +128,9 @@ page {
   right: 0;
   top: auto;
   height: 48px;
+}
+
+.my-foot{
+  display: block;
+  height:48px;
 }

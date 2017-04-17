@@ -85,7 +85,7 @@
             </view>
         </view>    
 
-        <view class="foot" style="height:320rpx;" hidden="{{!isInput}}"></view>
+        <view class="my-foot" ></view>
 </view>
 
 
