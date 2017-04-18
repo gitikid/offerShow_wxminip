@@ -8,6 +8,7 @@ Page({
         hasData: true,
         anim: {}
     },
+    cache : [],
     isNewest: true,//是最新列表而非搜索页
     onShareAppMessage: function () {
       return {
@@ -27,12 +28,12 @@ Page({
     },    
     onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数     
-        this.getInfo([app.globalData.domain, 'webapi', this.data.kind, ''].join('/'));
+        this.getInfo([app.globalData.domain, 'webapi', this.data.kind, ''].join('/'), {}, true);
         this.isNewest = true;//是最新列表而非搜索页
     },
     onShow: function(){
     },
-    getInfo: function(urltext, pastData = {}) {
+    getInfo: function(urltext, pastData = {}, cache = false) {
         var _this = this;
         wx.showToast({
           title: 'loading',
@@ -59,6 +60,9 @@ Page({
               list: list,
               hasData: list.length?true:false
             });
+            if (cache) {
+              _this.cache = list;
+            }
           },
           fail: function(res) {
             // fail
@@ -90,9 +94,14 @@ Page({
         });
     },
     inputTyping: function (e) {
-        this.setData({
-            keyword: e.detail.value.trim()
-        });
+      var dataToSet = {};
+      dataToSet['keyword'] = e.detail.value.trim();
+      if (e.detail.value === '') {
+        dataToSet['list'] = this.cache;
+        dataToSet['hasData'] = this.cache.length?true:false;
+      }
+      this.setData(dataToSet);
+
     },
     tapSearch: function(e) {
         if (this.data.keyword.trim() === '') {

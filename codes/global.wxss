@@ -61,7 +61,9 @@ page {
   top: 50px;
   left: 0;
   bottom: 50px;
+  right: 0px;
   padding: 8px 0 8px 0;
+  overflow-y: scroll; 
 }
 
 .my-panel-title {
@@ -121,16 +123,35 @@ page {
   text-align: right;
 }
 
+.my-foot{
+  display: block;
+  height:48px;
+}
+
 .my-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   top: auto;
-  height: 48px;
+  height: 50px;
+  display: -webkit-flex;
+  box-shadow: 0 -2px 2px gray;  
 }
 
-.my-foot{
-  display: block;
-  height:48px;
+.my-bottom .btn{
+  flex: 1 0 0;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.my-bottom .good{
+  color: white;
+  background: dodgerblue;
+}
+
+.my-bottom .bad{
+    color: black;
+    background: ghostwhite;  
 }

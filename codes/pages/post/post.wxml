@@ -7,7 +7,7 @@
   </view>
 </view>
 
-<view class="my-noscroll" >
+<view class="my-scroll" >
 
         <view id="basic" class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_input">
@@ -72,7 +72,7 @@
         <view id="remark" class="weui-cells weui-cells_after-title">
             <view class="weui-cell">
                 <view class="weui-cell__bd">
-                    <textarea class="weui-textarea" bindfocus="onFocus"  bindblur="onBlur"  bindinput="onInput" id="remark" placeholder="备注，如是否special等等"  style="height: 3.3em" />
+                    <input class="weui-textarea" bindfocus="onFocus"  bindblur="onBlur"  bindinput="onInput" id="remark" placeholder="备注，如是否special等等"  style="height: 3.3em" />
                 </view>
             </view>
         </view>    
@@ -81,7 +81,7 @@
 </view>
 
 
-<view class="bottom">
+<view class="my-bottom">
     <view bindtap="tapAbove" class="btn bad" data-action="2">放弃</view>    
     <view bindtap="tapConfirm" class="btn good" data-action="1">确定</view>
 </view>

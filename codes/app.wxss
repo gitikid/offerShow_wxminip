@@ -7,7 +7,7 @@ page{
   background: #EFEFF4;
 }
 
-.container {
+/*.container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -54,3 +54,4 @@ time{
     color: black;
     background: ghostwhite;
 }
+*/

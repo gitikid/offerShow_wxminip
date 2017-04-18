@@ -147,7 +147,7 @@ Page({
       'duration':10000
     });
     app.getAjaxData({
-      url: [app.globalData.domain,'webpi/jobrecord',''].join('/'),
+      url: [app.globalData.domain,'webapi/jobrecord',''].join('/'),
       data: param,
       success: function(res){
         wx.showToast({
