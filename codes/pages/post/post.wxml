@@ -36,14 +36,6 @@
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">职位</view>
-                </view>
-                <view class="weui-cell__bd">
-                    <input class="weui-input" bindinput="onInput" id="position" placeholder="职位名称" />
-                </view>
-            </view>
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__hd">
                     <view class="weui-label">工资</view>
                 </view>
                 <view class="weui-cell__bd">

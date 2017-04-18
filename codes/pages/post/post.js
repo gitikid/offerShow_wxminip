@@ -41,6 +41,10 @@ Page({
     isInput:false,
     toViewId:'basic'
   },
+  matchreg : {
+    'default':/^.{2,12}$/,
+    'remark':/.{2,450}/
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
   },
@@ -81,27 +85,37 @@ Page({
   onInput:function(e){
     var changedData = {};
     var text = e.detail.value.trim();
-    if(text === ''){
-      return;
+    var regitem = this.matchreg[e.target.id]|| this.matchreg['default'];
+    if  (text.length > 1){
+      if  (regitem.test(text)){
+        changedData[e.target.id] = e.detail.value.trim();
+        this.setData(changedData);  
+      }
+      else{
+        wx.showToast({
+          'title':'超出限制',
+          'icon':'loading',
+          'duration':1000
+        });      
+      }
     }
-    if(text.length > 45 && e.id !== 'desc'){
-      wx.showToast({
-        'title':'超出字数',
-        'icon':'loading',
-        'duration':1000
-      });
-      return;
-    }
-    if(text.length > 450 && e.id === 'desc'){
-      wx.showToast({
-        'title':'超出字数',
-        'icon':'loading',
-        'duration':1000
-      });      
-      return;
-    }
-    changedData[e.target.id] = e.detail.value.trim();
-    this.setData(changedData);    
+    // if(text.length > 45 && e.target.id !== 'desc'){
+    //   wx.showToast({
+    //     'title':'超出字数',
+    //     'icon':'loading',
+    //     'duration':1000
+    //   });
+    //   return;
+    // }
+    // if(text.length > 450 && e.target.id === 'desc'){
+    //   wx.showToast({
+    //     'title':'超出字数',
+    //     'icon':'loading',
+    //     'duration':1000
+    //   });      
+    //   return;
+    // }
+  
   },
   tapConfirm:function(){
     var that = this;
@@ -134,9 +148,11 @@ Page({
       'city':this.data.city,
       'salary':this.data.salary,
       'xueli':this.data.title[this.data.titleIndex]
-    };
+    };   
+    var regitem ;
     for(var i in param){
-      if(param[i].length < 1){
+      regitem = this.matchreg[i]||this.matchreg['default'];
+      if(!regitem.test(param[i])){
         wx.showToast({
           'title':'信息不完整',
           'icon':'loading',
