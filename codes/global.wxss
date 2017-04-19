@@ -1,0 +1,157 @@
+/* pages/test/test.wxss */
+
+page {
+  height: 100%;
+}
+
+.my-top-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.my-top {
+  height: 46px;
+  line-height: 46px;
+  font-size: 40rpx;
+  text-align: center;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #d7d6dc;
+}
+
+.my-top-style {
+  font-weight: bold;
+  color: white;
+  background: dodgerblue;
+  border: none;
+  box-shadow: 0 2px 2px gray;
+  padding: 0 10px 0 10px;
+}
+.weui-search-bar{
+  background: dodgerblue;
+  border-color: dodgerblue;
+  box-shadow: 0 2px 2px gray;
+}
+.weui-search-bar__cancel-btn{
+  color: white;
+}
+
+.my-btn-more {
+  margin-right: 10px;
+  line-height: 28px;
+}
+
+.my-btn-icon image {
+  display: inline-block;
+  height: 25px;
+  width: 28px;
+  vertical-align: middle;
+}
+
+.my-noscroll {
+  display: block;
+  margin-top: 50px;
+  padding: 8px 0 8px 0;
+}
+
+.my-scroll {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  bottom: 50px;
+  right: 0px;
+  padding: 8px 0 8px 0;
+  overflow-y: scroll; 
+}
+
+.my-panel-title {
+  color: black;
+}
+
+.my-panel-flex {
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.my-panel-flex-item3 {
+  flex: 3 0 60%;
+}
+
+.my-panel-flex-item1 {
+  flex: 1 0 auto;
+}
+
+.my-panel-tag {
+  display: inline-block;
+  border: 1rpx dodgerblue solid;
+  border-radius: 8rpx;
+  margin: 8rpx;
+  padding: 8rpx;
+  text-overflow: ellipsis;
+}
+
+.my-panel-cell {
+  color: dodgerblue;
+  /*font-size: 32rpx;*/
+}
+
+.my-panel-link{
+  color: dodgerblue;
+}
+.my-panel-link::after{
+  content: "  >>"
+}
+
+.my-text-center{
+  text-align: center;
+}
+
+.my-text-left {
+  text-align: left;
+  display: inline-block;
+}
+
+.my-text-right {
+  float: right;
+  display: block;
+}
+
+
+.my-text-alignright {
+  text-align: right;
+}
+
+.my-foot{
+  display: block;
+  height:48px;
+}
+
+.my-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: auto;
+  height: 50px;
+  display: -webkit-flex;
+  box-shadow: 0 -2px 2px gray;  
+}
+
+.my-bottom .btn{
+  flex: 1 0 0;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.my-bottom .good{
+  color: white;
+  background: dodgerblue;
+}
+
+.my-bottom .bad{
+    color: black;
+    background: ghostwhite;  
+}

@@ -1,16 +1,17 @@
 // pages/corp/corp.js
 var app = getApp();
 Page({
-  data:{
-    corp:'',
-    positionls:[],
-    salary:'0',
-    detaills:[],
-    offerls:[]
+  data: {
+    isiOS:app.globalData.isiOS,
+    corp: '',
+    positionls: [],
+    salary: '0',
+    detaills: [],
+    offerls: []
   },
-  onLoad:function(options){
+  onLoad: function(options) {
     this.setData({
-      corp:options.name
+      corp: options.name
     });
     var _this = this;
     wx.showToast({
@@ -19,9 +20,11 @@ Page({
       duration: 10000
     });
     app.getAjaxData({
-      url: [app.globalData.domain,'webapi/jobsearch',''].join('/'),
-      data: {'content':options.name},
-      success: function(res){
+      url: [app.globalData.domain, 'webapi/jobsearch/'].join('/'),
+      data: {
+        'content': options.name
+      },
+      success: function(res) {
         // success
         var ls = res.data.info;
         analyze(ls, _this);
@@ -36,35 +39,32 @@ Page({
     });
     // 页面初始化 options为页面跳转所带来的参数
   },
-  onReady:function(){
+  tapBack:function(){
+    wx.navigateBack();
+  },
+  onReady: function() {
     // 页面渲染完成
   },
-  onShow:function(){
+  onShow: function() {
     // 页面显示
   },
-  onHide:function(){
+  onHide: function() {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function() {
     // 页面关闭
   }
 });
 
-function analyze(ls, that){
+function analyze(ls, that) {
   // ls.sort(function(a,b){
   //   return parseInt(b.time.slice(4),10) - parseInt(a.time.slice(4),10);
   // });
-  var detaills = ls.slice(0,5);
-  detaills = detaills.map((v, i)=>{
-    if (v.remark.length > 60) {
-      v.remark = v.remark.slice(0,60).concat('......');
-    }
-    return v;
-  });
   that.setData({
-    positionls:ls.slice(0,5).map((v,i)=>{return v.position;}),
-    offerls:ls.slice(5),
-    salary:ls[0].salary,
-    detaills:detaills
-  });  
+    positionls: ls.slice(0, 5).map((v, i) => {
+      return v.position;
+    }),
+    offerls: ls,
+    salary: ls[0].salary
+  });
 }
