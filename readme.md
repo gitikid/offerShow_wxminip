@@ -1,7 +1,1 @@
-##offershow的小程序源码 
-##token需要作者授权 
-###todo
-*1、改用weui的样式*
-*2、时间到天数*
-*3、热度变红色*
-*4、加入收藏功能*
+*这是offershow的小程序源码，token.js需要找作者授权*   ### todo* 1、改用weui的样式(done)* 2、加入收藏功能(done)### OfferShow是什么？匿名的校招Offer交流平台，专注于服务在校大学生求职的最后一步。  官网：[www.ioffershow.com](https://www.ioffershow.com)OfferShow版本号：2.0.0主页君联系邮箱：abc_123@zju.edu.cn小程序开发者联系邮箱：wanghsinche@hotmail.com    ### 郑重声明：OfferShow小程序仅提供爆料，检索以及本地收藏功能，不会记录获取和记录任何微信用户的微信号个人信息。请大家放心使用。 如果需要更丰富的功能请登录官网访问。主页提供安卓跟IOS客户端下载。               
