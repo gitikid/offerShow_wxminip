@@ -6,10 +6,7 @@
             <view class="weui-search-bar__form">
                 <view class="weui-search-bar__box">
                     <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{keyword}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="tapSearch" />
-                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-                        <icon type="clear" size="14"></icon>
-                    </view>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="tapSearch" />
                 </view>
                 <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
                     <icon class="weui-icon-search" type="search" size="14"></icon>
@@ -17,6 +14,17 @@
                 </label>
             </view>
             <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        <view class="my-panel" hidden="{{!inputShowed}}"> 
+          <view class="weui-loadmore weui-loadmore_line" wx:if="{{history.length === 0}}">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line" >暂无搜索历史</view>
+          </view>               
+          <view class="weui-cells weui-cells_after-title" wx:if="{{history.length !== 0}}">         
+              <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{history}}" wx:key="{{*this}}">
+                  <view class="weui-cell__bd">{{item}}</view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </navigator>
+          </view>                  
         </view>
 </view>
 <view class="my-noscroll">
@@ -34,12 +42,6 @@
         </view>
       </view>
     </view>
-    <!--<view class="weui-panel__ft">
-      <view class="weui-cell weui-cell_access weui-cell_link">
-        <view class="weui-cell__bd my-panel-cell">{{item.time}}</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      </view>
-    </view>-->
   </navigator>
 </view>
 <view class="weui-loadmore weui-loadmore_line">

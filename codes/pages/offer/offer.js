@@ -3,11 +3,12 @@ Page({
     data: {
         list: [],
         kind: 'jobtotal',
-        keyword: '',
         inputShowed: false,
         hasData: true,
-        anim: {}
+        anim: {},
+        history: []
     },
+    keyword: '',    
     cache : [],
     isNewest: true,//是最新列表而非搜索页
     onShareAppMessage: function () {
@@ -30,6 +31,9 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数     
         this.getInfo([app.globalData.domain, 'webapi', this.data.kind, ''].join('/'), {}, true);
         this.isNewest = true;//是最新列表而非搜索页
+        this.setData({
+          'history':wx.getStorageSync('history') || []
+        });
     },
     onShow: function(){
     },
@@ -84,27 +88,23 @@ Page({
     },
     hideInput: function () {
         this.setData({
-            keyword: "",
             inputShowed: false
-        });
-    },
-    clearInput: function () {
-        this.setData({
-            keyword: ""
         });
     },
     inputTyping: function (e) {
       var dataToSet = {};
-      dataToSet['keyword'] = e.detail.value.trim();
+      this.keyword = e.detail.value.trim();
       if (e.detail.value === '') {
-        dataToSet['list'] = this.cache;
-        dataToSet['hasData'] = this.cache.length?true:false;
+        dataToSet.list = this.cache;
+        dataToSet.hasData = this.cache.length?true:false;
+        this.setData(dataToSet);
       }
-      this.setData(dataToSet);
 
     },
     tapSearch: function(e) {
-        if (this.data.keyword.trim() === '') {
+        var history = this.data.history;
+        this.hideInput();
+        if (this.keyword.trim() === '') {
           if ( this.isNewest) {//是最新列表而非搜索页
             wx.showToast({
               'title': '关键词为空',
@@ -117,12 +117,22 @@ Page({
           }
         }
         else{
+          //go
           this.isNewest = false;//进行搜索，设置非最新列表
           this.getInfo(
             [app.globalData.domain, 'webapi/jobsearch', ''].join('/'),
             {
-              'content': this.data.keyword.trim()
+              'content': this.keyword.trim()
             });
+          //保持4个历史
+          history.unshift(this.keyword.trim());
+          while(history.length > 4){
+            history.pop();
+          }
+          wx.setStorageSync('history', history);
+          this.setData({
+            'history':history
+          });          
         }
     },
     tapAbout: function() {

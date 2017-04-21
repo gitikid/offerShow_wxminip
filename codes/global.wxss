@@ -66,6 +66,11 @@ page {
   overflow-y: scroll; 
 }
 
+.my-panel{
+  background: white;
+  padding: 20px;
+}
+
 .my-panel-title {
   color: black;
 }

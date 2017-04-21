@@ -33,7 +33,6 @@
                     <view class="weui-input">
                     <navigator url="../corp/corp?name={{detail.company}}" class="my-panel-link">{{detail.company}}</navigator>
                    </view>
-                
                 </view>
             </view>                        
             <view class="weui-cell weui-cell_input">
@@ -75,7 +74,15 @@
                 <view class="weui-cell__bd">
                     <view class="weui-input">{{detail.number}}</view>
                 </view>
-            </view>                                  
+            </view> 
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">发布时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-input">{{detail.time}}</view>
+                </view>
+            </view>                                              
         </view>
 
         <view class="weui-cells__title">备注</view>
@@ -95,54 +102,6 @@
 </view>
 
 <view class="my-foot"></view>
-
-    <!--<view class="weui-form-preview">
-        <view class="weui-form-preview__hd">
-            <view class="weui-form-preview__item">
-                <view class="weui-form-preview__label">职位：</view>
-                <view class="weui-form-preview__value_in-hd">{{detail.position}}</view>
-            </view>
-        </view>
-        <view class="weui-form-preview__bd">
-            <view class="weui-form-preview__item">
-                <view class="weui-form-preview__label">行业：</view>
-                <view class="weui-form-preview__value">{{detail.hangye}}</view>
-            </view>
-            <view class="weui-form-preview__item">
-                <view class="weui-form-preview__label">公司：</view>
-                <view class="weui-form-preview__value">{{detail.company}}</view>
-            </view>
-            <view class="weui-form-preview__item">
-                <view class="weui-form-preview__label">地点：</view>
-                <view class="weui-form-preview__value">{{detail.city}}</view>
-            </view> 
-            <view class="weui-form-preview__item">
-                <view class="weui-form-preview__label">学历：</view>
-                <view class="weui-form-preview__value">{{detail.xueli}}</view>
-            </view>
-            <view class="weui-form-preview__item">
-                <view class="weui-form-preview__label my-panel-cell">工资：</view>
-                <view class="weui-form-preview__value my-panel-cell">{{detail.salary}}</view>
-            </view>
-            <view class="weui-form-preview__item ">
-                <view class="weui-form-preview__label my-panel-cell">热度：</view>
-                <view class="weui-form-preview__value my-panel-cell">{{detail.number}}</view>
-            </view>            
-            <view class="weui-form-preview__item ">
-                <view class="weui-form-preview__label my-panel-cell">可信度：</view>
-                <view class="weui-form-preview__value my-panel-cell">{{detail.score}}</view>
-            </view>   
-            <view class="weui-form-preview__item">
-                    <view class="weui-form-preview__label">备注：</view>
-                    <view class="weui-form-preview__value">{{detail.remark}}</view>
-            </view>                                 
-        </view>     
-
-        <view class="weui-form-preview__ft">
-            <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="tapRank" data-rank="jobdislike">不真实</view>        
-            <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="tapRank"  data-rank="joblike">可信</view>
-        </view>
-    </view>-->
 </view>
 
 <view class="my-bottom">
