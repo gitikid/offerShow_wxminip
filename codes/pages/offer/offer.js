@@ -25,7 +25,7 @@ Page({
         fail: function(res) {
           // 分享失败
         }
-      }
+      };
     },    
     onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数     
@@ -54,12 +54,13 @@ Page({
               wx.showToast({
                 title: '无结果',
                 icon: 'loading',
-                duration: 2000
+                duration: 1000
               });
             }
             else{
               wx.hideToast();
             }
+            // wx.hideToast();            
             _this.setData({
               list: list,
               hasData: list.length?true:false
@@ -74,7 +75,7 @@ Page({
               title: 'failed',
               icon: 'loading',
               duration: 10000
-            })
+            });
           },
           complete: function(res) {
             // complete
@@ -99,9 +100,19 @@ Page({
         dataToSet.hasData = this.cache.length?true:false;
         this.setData(dataToSet);
       }
-
     },
-    tapSearch: function(e) {
+    clickHistory:function(e){
+      console.log('df');
+      this.keyword = e.currentTarget.dataset.word;
+      this.tapSearch();
+    },
+    clearHistory: function(e){
+        wx.setStorageSync('history', []);
+        this.setData({
+          'history':[]
+        });        
+    },   
+    tapSearch: function() {
         var history = this.data.history;
         this.hideInput();
         if (this.keyword.trim() === '') {
@@ -124,15 +135,17 @@ Page({
             {
               'content': this.keyword.trim()
             });
-          //保持4个历史
-          history.unshift(this.keyword.trim());
-          while(history.length > 4){
-            history.pop();
+          if (history.indexOf(this.keyword) === -1){
+            //保持4个历史
+            history.unshift(this.keyword.trim());
+            while(history.length > 4){
+              history.pop();
+            }
+            wx.setStorageSync('history', history);
+            this.setData({
+              'history':history
+            });
           }
-          wx.setStorageSync('history', history);
-          this.setData({
-            'history':history
-          });          
         }
     },
     tapAbout: function() {
