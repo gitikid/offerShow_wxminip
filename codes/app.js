@@ -1,11 +1,16 @@
 //app.js
 var token = require('/utils/token.js');
 App({
-  onLaunch: function() {
+  onShow: function(options) {
     //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs);
+    //这里需要修改
+    console.log("2");
+    console.log(options);
+  },
+  onLaunch:function(options){
+    //这里需要修改
+    console.log("1");
+    console.log(options);
   },
   getUserInfo: function(cb) {
     var that = this
@@ -120,6 +125,7 @@ App({
     isiOS: wx.getSystemInfoSync().system.indexOf('iOS') === -1?false:true,
     token: token.token,
     domain: 'https://www.ioffershow.com',
-    userInfo: null
+    userInfo: null,
+    scene: 1001
   }
 });

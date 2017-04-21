@@ -9,7 +9,8 @@ Page({
   onShareAppMessage: function () {
     return {
       title: 'OfferShow-' + this.data.detail.company +'-'+ this.data.detail.position,
-      path: 'pages/detail/detail?id=' + this.data.id,
+      //path: ['pages/detail/detail?id=',this.data.id,'&getdata=request'].join(''),
+      path: 'pages/offer/offer',
       success: function(res) {
         wx.showToast({
           'title':'分享成功',
@@ -68,9 +69,11 @@ Page({
   onReady: function() {
     // 页面渲染完成
   },
-  onShow: function() {
+  onShow: function(options) {
     // 页面显示
-    this.detectFav();    
+    this.detectFav();  
+    console.log(options);
+      
   },
   onHide: function() {
     // 页面隐藏
@@ -79,14 +82,21 @@ Page({
     // 页面关闭
   },
   tapBack:function(){
-    wx.navigateBack();
+    if (app.globalData.scene === 1036) {
+      wx.switchTab({
+        url: 'pages/offer/offer'
+      });
+    }
+    else{
+      wx.navigateBack();
+    }
   },  
   postRank: function(urltext) {
     wx.showToast({
       title: 'loading',
       icon: 'loading',
       duration: 10000
-    })
+    });
     app.getAjaxData({
       url: urltext,
       data: {

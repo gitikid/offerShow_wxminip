@@ -18,3 +18,6 @@
     border-radius: 50%;
     border: 1px gray solid;
 }
+.weui-article__p{
+    word-wrap: break-word;
+}

@@ -66,6 +66,8 @@ page {
   overflow-y: scroll; 
 }
 
+
+
 .my-panel-title {
   color: black;
 }
