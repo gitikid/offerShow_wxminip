@@ -88,9 +88,9 @@ Page({
         });
     },
     hideInput: function () {
-        this.setData({
-            inputShowed: false
-        });
+          this.setData({
+              inputShowed: false
+          });
     },
     inputTyping: function (e) {
       var dataToSet = {};
@@ -102,7 +102,6 @@ Page({
       }
     },
     clickHistory:function(e){
-      console.log('df');
       this.keyword = e.currentTarget.dataset.word;
       this.tapSearch();
     },
@@ -112,6 +111,11 @@ Page({
           'history':[]
         });        
     },   
+    tapBackground: function(e){
+        if (e.target.id === 'historyBackground'){
+          this.hideInput();
+        }
+    },
     tapSearch: function() {
         var history = this.data.history;
         this.hideInput();

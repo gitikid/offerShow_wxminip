@@ -38,7 +38,7 @@
 </view>
 <include src="../../utils/postButton.wxml"/>
 
-<view class="my-panel my-panel-full my-history" hidden="{{!inputShowed}}" bindtap="hideInput"> 
+<view class="my-panel my-panel-full my-history" hidden="{{!inputShowed}}" bindtap="tapBackground" id="historyBackground"> 
   <view class="weui-cells__title">搜索历史</view>  
   <view class="weui-loadmore weui-loadmore_line" wx:if="{{history.length === 0}}">
       <view class="weui-loadmore__tips weui-loadmore__tips_in-line" >暂无搜索历史</view>
