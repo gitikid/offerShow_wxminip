@@ -107,7 +107,7 @@ Page({
           title: '谢谢评价',
           icon: 'success',
           duration: 2000
-        })
+        });
       },
       fail: function(res) {
         // fail
@@ -115,11 +115,12 @@ Page({
           title: '错误',
           icon: 'success',
           duration: 2000
-        })
+        });
       },
       complete: function(res) {
         setTimeout(function() {
-          wx.navigateBack()
+          app.globalData.needReq = true;
+          wx.navigateBack();
         }, 1500);
       }
     })

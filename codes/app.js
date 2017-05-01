@@ -126,6 +126,7 @@ App({
     token: token.token,
     domain: 'https://www.ioffershow.com',
     userInfo: null,
-    scene: 1001
+    scene: 1001,
+    needReq: true
   }
 });

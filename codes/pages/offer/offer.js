@@ -6,9 +6,10 @@ Page({
         inputShowed: false,
         hasData: true,
         anim: {},
-        history: []
+        history: [],
+        inputval:'',
+        keyword: '',            
     },
-    keyword: '',    
     cache : [],
     isNewest: true,//是最新列表而非搜索页
     onShareAppMessage: function () {
@@ -29,13 +30,22 @@ Page({
     },    
     onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数     
-        this.getInfo([app.globalData.domain, 'webapi', this.data.kind, ''].join('/'), {}, true);
-        this.isNewest = true;//是最新列表而非搜索页
-        this.setData({
-          'history':wx.getStorageSync('history') || []
-        });
+        // this.getInfo([app.globalData.domain, 'webapi', this.data.kind, ''].join('/'), {}, true);
+        // this.isNewest = true;//是最新列表而非搜索页
+        // this.setData({
+        //   'history':wx.getStorageSync('history') || []
+        // });
     },
     onShow: function(){
+    // 页面初始化 options为页面跳转所带来的参数 
+        if (app.globalData.needReq) {
+          app.globalData.needReq = false;
+          this.getInfo([app.globalData.domain, 'webapi', this.data.kind, ''].join('/'), {}, true);
+          this.isNewest = true;//是最新列表而非搜索页
+          this.setData({
+            'history':wx.getStorageSync('history') || []
+          });      
+        }    
     },
     getInfo: function(urltext, pastData = {}, cache = false) {
         var _this = this;
@@ -88,13 +98,15 @@ Page({
         });
     },
     hideInput: function () {
-        this.setData({
-            inputShowed: false
-        });
+          this.setData({
+              inputShowed: false
+          });
     },
     inputTyping: function (e) {
       var dataToSet = {};
-      this.keyword = e.detail.value.trim();
+      this.setData({
+        'keyword':e.detail.value          
+      });
       if (e.detail.value === '') {
         dataToSet.list = this.cache;
         dataToSet.hasData = this.cache.length?true:false;
@@ -102,8 +114,9 @@ Page({
       }
     },
     clickHistory:function(e){
-      console.log('df');
-      this.keyword = e.currentTarget.dataset.word;
+      this.setData({
+        'keyword':e.currentTarget.dataset.word
+      });
       this.tapSearch();
     },
     clearHistory: function(e){
@@ -112,10 +125,15 @@ Page({
           'history':[]
         });        
     },   
+    tapBackground: function(e){
+        if (e.target.id === 'historyBackground'){
+          this.hideInput();
+        }
+    },
     tapSearch: function() {
         var history = this.data.history;
         this.hideInput();
-        if (this.keyword.trim() === '') {
+        if (this.data.keyword.trim() === '') {
           if ( this.isNewest) {//是最新列表而非搜索页
             wx.showToast({
               'title': '关键词为空',
@@ -124,7 +142,8 @@ Page({
             });
           }
           else{
-            this.onLoad();
+            app.globalData.needReq = true;
+            this.onShow();
           }
         }
         else{
@@ -133,11 +152,11 @@ Page({
           this.getInfo(
             [app.globalData.domain, 'webapi/jobsearch', ''].join('/'),
             {
-              'content': this.keyword.trim()
+              'content': this.data.keyword.trim()
             });
-          if (history.indexOf(this.keyword) === -1){
+          if (history.indexOf(this.data.keyword) === -1){
             //保持4个历史
-            history.unshift(this.keyword.trim());
+            history.unshift(this.data.keyword.trim());
             while(history.length > 4){
               history.pop();
             }
