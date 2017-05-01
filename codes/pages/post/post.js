@@ -156,8 +156,9 @@ Page({
           'duration':2000
         });
         setTimeout(function(){
+          app.globalData.needReq = true;
           wx.navigateBack();
-        },1500)
+        },1500);
       },
       fail: function(res) {
         // fail
